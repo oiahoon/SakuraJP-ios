@@ -2,9 +2,9 @@ name: Deploy Homepage to GitHub Pages
 
 on:
   push:
-    branches: [ ios-homepage ]
+    branches: [ main ]
   pull_request:
-    branches: [ ios-homepage ]
+    branches: [ main ]
 
 permissions:
   contents: read
