@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术支持 - SakuraJP</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .support-content {
+            max-width: 800px;
+            margin: 100px auto 50px;
+            padding: var(--spacing-xl);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: var(--radius-lg);
+            line-height: 1.8;
+        }
+        .support-content h1 {
+            color: var(--primary);
+            margin-bottom: var(--spacing-lg);
+        }
+        .support-content h2 {
+            color: var(--dark);
+            margin: var(--spacing-lg) 0 var(--spacing-md);
+        }
+        .support-content p {
+            margin-bottom: var(--spacing-md);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: var(--spacing-md);
+        }
+        .contact-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(255, 107, 157, 0.1) 100%);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .faq-item {
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-md);
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: var(--spacing-md);
+            font-weight: 600;
+            cursor: pointer;
+            background: rgba(102, 126, 234, 0.1);
+        }
+        .faq-answer {
+            padding: var(--spacing-md);
+            display: none;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="support-content">
+            <a href="index.html" class="btn btn-secondary back-link">← 返回首页</a>
+            
+            <h1>技术支持</h1>
+            
+            <div class="contact-card">
+                <h2>📧 联系我们</h2>
+                <p><strong>邮箱：</strong>support@sakurajp.app</p>
+                <p><strong>GitHub：</strong><a href="https://github.com/oiahoon/SakuraJP-ios/issues" target="_blank">提交问题</a></p>
+                <p><strong>响应时间：</strong>通常在24小时内回复</p>
+            </div>
+            
+            <h2>🔧 故障排除</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    应用无法启动或闪退怎么办？
+                </div>
+                <div class="faq-answer">
+                    <p>请尝试以下解决方案：</p>
+                    <ol>
+                        <li>强制关闭应用并重新启动</li>
+                        <li>重启您的设备</li>
+                        <li>检查应用是否有更新版本</li>
+                        <li>确保iOS系统版本支持（需要iOS 13.0或更高版本）</li>
+                        <li>如果问题持续，请联系技术支持</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    AI辅导功能无法使用？
+                </div>
+                <div class="faq-answer">
+                    <p>AI功能需要网络连接，请检查：</p>
+                    <ol>
+                        <li>设备是否连接到互联网</li>
+                        <li>网络连接是否稳定</li>
+                        <li>是否达到每日使用限制（免费用户每日10次）</li>
+                        <li>在设置中检查AI配置是否正确</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    学习数据丢失了怎么办？
+                </div>
+                <div class="faq-answer">
+                    <p>数据恢复步骤：</p>
+                    <ol>
+                        <li>检查是否登录了相同的Apple ID</li>
+                        <li>确保iCloud备份功能已开启</li>
+                        <li>尝试重新安装应用（数据可能会自动恢复）</li>
+                        <li>如果数据无法恢复，请联系技术支持</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    语音功能无法正常工作？
+                </div>
+                <div class="faq-answer">
+                    <p>请检查以下设置：</p>
+                    <ol>
+                        <li>确保设备音量已开启</li>
+                        <li>检查应用的麦克风权限</li>
+                        <li>在设置中选择合适的TTS引擎</li>
+                        <li>确保网络连接正常（Google TTS需要网络）</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    订阅或付费相关问题？
+                </div>
+                <div class="faq-answer">
+                    <p>订阅管理：</p>
+                    <ol>
+                        <li>所有订阅通过App Store管理</li>
+                        <li>在iPhone设置 > Apple ID > 订阅中查看</li>
+                        <li>可以随时取消或修改订阅</li>
+                        <li>退款请求需要通过Apple客服处理</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <h2>📱 系统要求</h2>
+            <ul>
+                <li><strong>iOS版本：</strong>13.0或更高版本</li>
+                <li><strong>存储空间：</strong>至少100MB可用空间</li>
+                <li><strong>网络：</strong>AI功能需要互联网连接</li>
+                <li><strong>设备：</strong>iPhone 6s及更新机型</li>
+            </ul>
+            
+            <h2>🆕 版本更新</h2>
+            <p>我们定期发布更新来修复问题和添加新功能：</p>
+            <ul>
+                <li>在App Store中检查更新</li>
+                <li>开启自动更新以获得最新功能</li>
+                <li>查看更新说明了解新功能</li>
+            </ul>
+            
+            <h2>💡 使用技巧</h2>
+            <ul>
+                <li><strong>学习计划：</strong>建议每天学习15-30分钟</li>
+                <li><strong>复习频率：</strong>遵循应用的智能复习提醒</li>
+                <li><strong>AI辅导：</strong>遇到困难时主动使用AI功能</li>
+                <li><strong>进度追踪：</strong>定期查看学习统计调整学习策略</li>
+            </ul>
+            
+            <h2>🐛 报告问题</h2>
+            <p>如果您发现了bug或有改进建议：</p>
+            <ol>
+                <li>访问我们的<a href="https://github.com/oiahoon/SakuraJP-ios/issues" target="_blank">GitHub Issues页面</a></li>
+                <li>搜索是否已有类似问题</li>
+                <li>创建新的issue并详细描述问题</li>
+                <li>包含设备型号、iOS版本和应用版本信息</li>
+            </ol>
+            
+            <div class="contact-card">
+                <h2>🤝 获取帮助</h2>
+                <p>我们致力于为用户提供最好的学习体验。如果您需要任何帮助，请不要犹豫联系我们：</p>
+                <p><strong>邮箱：</strong>support@sakurajp.app</p>
+                <p>我们会尽快回复您的问题！</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const allItems = document.querySelectorAll('.faq-item');
+            
+            // Close all other items
+            allItems.forEach(item => {
+                if (item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            faqItem.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
