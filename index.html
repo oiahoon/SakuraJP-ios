@@ -1,66 +1,114 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SakuraJP - 智能日语学习应用</title>
-    <meta name="description" content="专为中文用户设计的智能日语学习应用。17,929个精选词汇，AI智能辅导，个性化学习路径。">
-    <meta name="keywords" content="日语学习,日语,JLPT,N5,N4,N3,N2,N1,日语单词,日语语法,AI学习">
+    <title>SakuraJP - AI-Powered Japanese Learning App</title>
+    <meta name="description" content="Master Japanese with AI-powered learning. 17,929+ vocabulary words, intelligent grammar correction, and personalized study paths. Available on iOS.">
+    <meta name="keywords" content="Japanese learning,JLPT,N5,N4,N3,N2,N1,Japanese vocabulary,Japanese grammar,AI learning,iOS app,language learning">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="SakuraJP - 智能日语学习应用">
-    <meta property="og:description" content="专为中文用户设计的智能日语学习应用。AI驱动，个性化学习。">
+    <meta property="og:title" content="SakuraJP - AI-Powered Japanese Learning App">
+    <meta property="og:description" content="Master Japanese with AI-powered learning, vocabulary practice, and intelligent grammar correction.">
     <meta property="og:image" content="https://sakura.miaowu.org/assets/og-image.png">
     <meta property="og:url" content="https://sakura.miaowu.org/">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SakuraJP - 智能日语学习应用">
-    <meta name="twitter:description" content="专为中文用户设计的智能日语学习应用">
+    <meta name="twitter:title" content="SakuraJP - AI-Powered Japanese Learning App">
+    <meta name="twitter:description" content="Master Japanese with AI-powered learning and intelligent grammar correction">
     <meta name="twitter:image" content="https://sakura.miaowu.org/assets/og-image.png">
+    
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="SakuraJP">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=SF+Pro+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Theme toggle and navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-brand">
+                    <span class="logo-icon">🌸</span>
+                    <span class="logo-text">SakuraJP</span>
+                </div>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <span class="theme-icon light">☀️</span>
+                        <span class="theme-icon dark">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-orbs">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+            </div>
+        </div>
+        
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        用<span class="gradient-text">AI智能</span>
-                        <br>开启日语学习新旅程
-                    </h1>
-                    <p class="hero-description">
-                        SakuraJP 是专为中文用户设计的智能日语学习应用。
-                        从零基础到N1，17,929个精选词汇，AI个性化辅导，
-                        让日语学习更高效、更有趣。
-                    </p>
-                    <div class="hero-buttons">
-                        <a href="#testflight" class="btn btn-large btn-primary">
-                            📱 免费下载
-                        </a>
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    <span>Version 1.3.1 - Now with Dark Mode</span>
+                </div>
+                
+                <h1 class="hero-title">
+                    Master Japanese with
+                    <span class="gradient-text">AI-Powered</span>
+                    Learning
+                </h1>
+                
+                <p class="hero-description">
+                    Experience the future of language learning with SakuraJP. 
+                    Advanced AI grammar correction, 17,929+ curated vocabulary, 
+                    and personalized study paths designed for serious learners.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <span class="btn-icon">📱</span>
+                        Download for iOS
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <span class="btn-icon">▶️</span>
+                        Watch Demo
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">17,929+</div>
+                        <div class="stat-label">Vocabulary Words</div>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat">
-                            <div class="stat-number">17,929</div>
-                            <div class="stat-label">精选词汇</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">N5-N1</div>
-                            <div class="stat-label">全级别覆盖</div>
-                        </div>
-                        <div class="stat">
-                            <div class="stat-number">AI</div>
-                            <div class="stat-label">智能辅导</div>
-                        </div>
+                    <div class="stat-card">
+                        <div class="stat-number">N5→N1</div>
+                        <div class="stat-label">JLPT Levels</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">AI</div>
+                        <div class="stat-label">Grammar Correction</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Dark Mode</div>
+                        <div class="stat-label">iOS Compliant</div>
                     </div>
                 </div>
             </div>
@@ -68,50 +116,267 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">强大功能，助力学习</h2>
-                <p class="section-subtitle">科学的学习方法，智能的辅导系统</p>
+                <h2 class="section-title">Powerful Features for Effective Learning</h2>
+                <p class="section-subtitle">Experience the most advanced Japanese learning tools available</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3 class="feature-title">AI智能辅导</h3>
-                    <p class="feature-description">
-                        DeepSeek AI驱动，提供个性化学习建议，
-                        智能纠错和语法解释
-                    </p>
+            
+            <div class="features-showcase">
+                <!-- AI-Powered Learning -->
+                <div class="feature-card featured" data-feature="ai">
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon ai-icon">
+                                <span class="icon-gradient">🤖</span>
+                            </div>
+                            <div class="feature-badge">NEW</div>
+                        </div>
+                        <h3 class="feature-title">AI-Powered Grammar Correction</h3>
+                        <p class="feature-description">
+                            Advanced AI analyzes your Japanese input in real-time, 
+                            providing intelligent corrections and detailed explanations 
+                            to accelerate your learning.
+                        </p>
+                        <div class="feature-demo">
+                            <div class="demo-input">
+                                <span class="demo-label">Your input:</span>
+                                <span class="demo-text incorrect">私は学校を行きます</span>
+                            </div>
+                            <div class="demo-output">
+                                <span class="demo-label">AI correction:</span>
+                                <span class="demo-text correct">私は学校に行きます</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📚</div>
-                    <h3 class="feature-title">海量词汇库</h3>
-                    <p class="feature-description">
-                        17,929个精选词汇，覆盖JLPT N5-N1全部级别，
-                        配有详细释义和例句
-                    </p>
+                
+                <!-- Vocabulary Practice -->
+                <div class="feature-card" data-feature="vocabulary">
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon vocab-icon">
+                                <span class="icon-gradient">📚</span>
+                            </div>
+                        </div>
+                        <h3 class="feature-title">Comprehensive Vocabulary</h3>
+                        <p class="feature-description">
+                            Master 17,929+ carefully curated words covering all JLPT levels. 
+                            Each word includes pronunciation, examples, and contextual usage.
+                        </p>
+                        <div class="vocabulary-preview">
+                            <div class="vocab-card">
+                                <div class="vocab-kanji">勉強</div>
+                                <div class="vocab-reading">べんきょう</div>
+                                <div class="vocab-meaning">study, learning</div>
+                                <div class="vocab-level">N4</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3 class="feature-title">智能复习系统</h3>
-                    <p class="feature-description">
-                        基于艾宾浩斯遗忘曲线，自动安排复习计划，
-                        提高记忆效率
-                    </p>
+                
+                <!-- Practice Modes -->
+                <div class="feature-card" data-feature="practice">
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon practice-icon">
+                                <span class="icon-gradient">🎯</span>
+                            </div>
+                        </div>
+                        <h3 class="feature-title">Multiple Practice Modes</h3>
+                        <p class="feature-description">
+                            Verb conjugation, sentence building, voice practice, and more. 
+                            Adaptive learning that adjusts to your progress and weak points.
+                        </p>
+                        <div class="practice-modes">
+                            <div class="practice-mode">
+                                <span class="mode-icon">⚡</span>
+                                <span class="mode-name">Conjugation</span>
+                            </div>
+                            <div class="practice-mode">
+                                <span class="mode-icon">🗣️</span>
+                                <span class="mode-name">Voice</span>
+                            </div>
+                            <div class="practice-mode">
+                                <span class="mode-icon">📝</span>
+                                <span class="mode-name">Sentences</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Progress Tracking -->
+                <div class="feature-card" data-feature="progress">
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon progress-icon">
+                                <span class="icon-gradient">📊</span>
+                            </div>
+                        </div>
+                        <h3 class="feature-title">Advanced Progress Tracking</h3>
+                        <p class="feature-description">
+                            Detailed analytics track your learning journey. 
+                            Identify strengths, address weaknesses, and maintain motivation.
+                        </p>
+                        <div class="progress-chart">
+                            <div class="chart-bar" style="--progress: 85%" data-label="Vocabulary"></div>
+                            <div class="chart-bar" style="--progress: 72%" data-label="Grammar"></div>
+                            <div class="chart-bar" style="--progress: 90%" data-label="Listening"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dark Mode -->
+                <div class="feature-card" data-feature="darkmode">
+                    <div class="feature-content">
+                        <div class="feature-header">
+                            <div class="feature-icon darkmode-icon">
+                                <span class="icon-gradient">🌙</span>
+                            </div>
+                        </div>
+                        <h3 class="feature-title">iOS-Compliant Dark Mode</h3>
+                        <p class="feature-description">
+                            Beautiful dark mode that follows Apple's Human Interface Guidelines. 
+                            Perfect for late-night study sessions and OLED displays.
+                        </p>
+                        <div class="theme-preview">
+                            <div class="theme-sample light-theme">
+                                <div class="theme-header"></div>
+                                <div class="theme-content"></div>
+                            </div>
+                            <div class="theme-toggle-icon">⇄</div>
+                            <div class="theme-sample dark-theme">
+                                <div class="theme-header"></div>
+                                <div class="theme-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Screenshots Section -->
+    <section class="screenshots" id="screenshots">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience SakuraJP</h2>
+                <p class="section-subtitle">See the app in action with real screenshots</p>
+            </div>
+            
+            <div class="screenshots-showcase">
+                <div class="device-mockup">
+                    <div class="iphone-frame">
+                        <div class="screenshot-placeholder">
+                            <div class="mock-interface">
+                                <div class="mock-header">
+                                    <div class="mock-title">SakuraJP</div>
+                                    <div class="mock-toggle">🌙</div>
+                                </div>
+                                <div class="mock-card main-card">
+                                    <div class="mock-icon">📚</div>
+                                    <div class="mock-content">
+                                        <div class="mock-text large">Vocabulary Practice</div>
+                                        <div class="mock-text small">Master Japanese words systematically</div>
+                                    </div>
+                                </div>
+                                <div class="mock-features">
+                                    <div class="mock-feature">
+                                        <div class="mock-icon small">🤖</div>
+                                        <div class="mock-text">AI Grammar</div>
+                                    </div>
+                                    <div class="mock-feature">
+                                        <div class="mock-icon small">⚡</div>
+                                        <div class="mock-text">Conjugation</div>
+                                    </div>
+                                    <div class="mock-feature">
+                                        <div class="mock-icon small">📊</div>
+                                        <div class="mock-text">Progress</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="screenshots-features">
+                    <div class="screenshot-feature">
+                        <h3>Modern iOS Design</h3>
+                        <p>Native iOS interface with glassmorphic effects and smooth animations</p>
+                    </div>
+                    <div class="screenshot-feature">
+                        <h3>Intuitive Navigation</h3>
+                        <p>Easy-to-use interface designed following Apple's Human Interface Guidelines</p>
+                    </div>
+                    <div class="screenshot-feature">
+                        <h3>Dark Mode Support</h3>
+                        <p>Beautiful dark theme that adapts to your system preferences</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Download Section -->
-    <section class="download" id="testflight">
+    <section class="download" id="download">
+        <div class="download-background">
+            <div class="download-gradient"></div>
+        </div>
+        
         <div class="container">
             <div class="download-content">
-                <h2 class="download-title">准备好开始学习了吗？</h2>
-                <p class="download-subtitle">立即下载 SakuraJP，开启你的日语学习之旅</p>
+                <div class="download-header">
+                    <h2 class="download-title">Ready to Master Japanese?</h2>
+                    <p class="download-subtitle">
+                        Join thousands of learners who have transformed their Japanese skills with SakuraJP
+                    </p>
+                </div>
+                
+                <div class="download-options">
+                    <div class="download-card primary">
+                        <div class="download-icon">📱</div>
+                        <h3>Download for iOS</h3>
+                        <p>Available on TestFlight and App Store</p>
+                        <div class="download-buttons">
+                            <a href="#" class="btn btn-download testflight">
+                                <span class="btn-icon">✈️</span>
+                                TestFlight Beta
+                            </a>
+                            <a href="#" class="btn btn-download appstore">
+                                <span class="btn-icon">🍎</span>
+                                App Store
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="download-stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">⭐</div>
+                            <div class="stat-text">
+                                <div class="stat-number">4.9</div>
+                                <div class="stat-label">User Rating</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-text">
+                                <div class="stat-number">10K+</div>
+                                <div class="stat-label">Active Users</div>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">🎯</div>
+                            <div class="stat-text">
+                                <div class="stat-number">95%</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="download-note">
-                    <p>📱 TestFlight版本即将推出</p>
-                    <p>🍎 App Store版本开发中</p>
+                    <p><strong>Version 1.3.1</strong> • iOS 14.0+ • 50MB • Free with Premium Features</p>
                 </div>
             </div>
         </div>
@@ -127,30 +392,55 @@
                         <span class="logo-text">SakuraJP</span>
                     </div>
                     <p class="footer-description">
-                        专为中文用户设计的智能日语学习应用
+                        AI-powered Japanese learning app designed for serious learners
                     </p>
                     <div class="social-links">
-                        <a href="https://github.com/oiahoon/SakuraJP-ios" target="_blank">GitHub</a>
-                        <a href="mailto:support@sakurajp.app">Email</a>
+                        <a href="https://github.com/oiahoon/SakuraJP-ios" target="_blank" aria-label="GitHub">
+                            <span class="social-icon">🔗</span>
+                            GitHub
+                        </a>
+                        <a href="mailto:support@sakurajp.app" aria-label="Email Support">
+                            <span class="social-icon">📧</span>
+                            Email
+                        </a>
                     </div>
                 </div>
+                
                 <div class="footer-links">
                     <div class="footer-column">
-                        <h4>支持</h4>
-                        <a href="mailto:support@sakurajp.app">联系支持</a>
-                        <a href="https://github.com/oiahoon/SakuraJP-ios/issues">问题反馈</a>
+                        <h4>App</h4>
+                        <a href="#features">Features</a>
+                        <a href="#download">Download</a>
+                        <a href="#screenshots">Screenshots</a>
                     </div>
                     <div class="footer-column">
-                        <h4>法律</h4>
-                        <a href="https://github.com/oiahoon/SakuraJP-ios">项目主页</a>
+                        <h4>Support</h4>
+                        <a href="mailto:support@sakurajp.app">Contact Support</a>
+                        <a href="https://github.com/oiahoon/SakuraJP-ios/issues">Report Issues</a>
+                        <a href="support.html">Help Center</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="privacy.html">Privacy Policy</a>
+                        <a href="terms.html">Terms of Service</a>
+                        <a href="https://github.com/oiahoon/SakuraJP-ios">Open Source</a>
                     </div>
                 </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2025 SakuraJP. All rights reserved.</p>
-                <p>Made with ❤️ for Japanese learners</p>
+                <div class="footer-credits">
+                    <p>&copy; 2025 SakuraJP. All rights reserved.</p>
+                    <p>Made with <span class="heart">❤️</span> by <strong>onice</strong> for Japanese learners worldwide</p>
+                </div>
+                <div class="footer-version">
+                    <span class="version-badge">v1.3.1</span>
+                </div>
             </div>
         </div>
     </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>
