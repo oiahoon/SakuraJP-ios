@@ -1,22 +1,23 @@
-# 🌸 SakuraJP Native iOS Homepage
+# 🌸 樱语 (Yīngyǔ) Official Homepage
 
-Official homepage and marketing materials for the SakuraJP native iOS Japanese learning app built with Swift & SwiftUI.
+Official homepage and marketing materials for 樱语, the revolutionary native iOS Japanese learning app built with Swift & SwiftUI.
 
 ## 🌐 Live Website
 
 **Homepage:** [https://sakura.miaowu.org](https://sakura.miaowu.org)
 
-## 📱 About SakuraJP
+## 📱 About 樱语 (Yīngyǔ)
 
-SakuraJP is a production-ready native iOS Japanese learning app built with Swift & SwiftUI, featuring:
+樱语 is a revolutionary native iOS Japanese learning app built with Swift & SwiftUI, featuring:
 
-- **17,929+ JLPT Vocabulary** - Complete N5-N1 coverage with 17,791 example sentences
-- **AI-Powered Tutoring** - DeepSeek AI integration for intelligent learning
-- **Advanced Conjugation Engine** - 15+ verb forms and complete adjective patterns
-- **Native iOS Performance** - Built with Swift & SwiftUI for optimal performance
-- **Glassmorphic Cherry Blossom UI** - Beautiful design with Japanese cultural elements
-- **Production Quality** - Comprehensive testing and App Store optimization
-- **iOS 18+ Support** - Latest iOS features and accessibility compliance
+- **3000-Card Smart Random System** - Revolutionary intelligent card selection with Shannon entropy monitoring
+- **17,929+ JLPT Vocabulary** - Complete N5-N1 coverage with enhanced learning analytics
+- **AI-Powered Tutoring** - DeepSeek AI integration optimized for Chinese speakers
+- **User Behavior Analytics** - Advanced behavioral tracking for personalized learning paths
+- **Native iOS Performance** - Built with Swift & SwiftUI for 60fps animations
+- **Glassmorphic Cherry Blossom UI** - Beautiful design with modern iOS 18+ materials
+- **Production Quality** - Version 2.6.0 ready for App Store with zero critical bugs
+- **Cultural Optimization** - Specifically designed for Chinese speakers learning Japanese
 
 ## 🏗️ Technical Stack
 
@@ -76,15 +77,15 @@ The site automatically deploys to GitHub Pages when changes are pushed to the `m
 ## 📞 Contact
 
 - **Homepage**: [https://sakura.miaowu.org](https://sakura.miaowu.org)
-- **Support**: [support@sakurajp.app](mailto:support@sakurajp.app)
+- **Support**: [support@yingyu.app](mailto:support@yingyu.app)
 - **iOS Native Repository**: [sakura-jp/ios-native](https://github.com/oiahoon/sakura-jp/tree/main/ios-native)
 - **Issues**: [Report problems here](https://github.com/oiahoon/SakuraJP-ios/issues)
-- **TestFlight**: Available for beta testing (contact support for access)
+- **TestFlight**: Beta testing available for Version 2.6.0 (contact support for access)
 
 ## 📄 License
 
-Copyright © 2025 SakuraJP. All rights reserved.
+Copyright © 2025 樱语. All rights reserved.
 
 ---
 
-Made with ❤️ for the SakuraJP Japanese learning community
+Made with ❤️ for the 樱语 Japanese learning community

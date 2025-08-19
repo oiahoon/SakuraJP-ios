@@ -1,321 +1,388 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SakuraJP - Native iOS Japanese Learning with AI</title>
-    <meta name="description" content="Native iOS Japanese learning app with AI-powered tutoring. 17,929+ JLPT vocabulary, intelligent grammar correction, and conjugation practice. Built with Swift & SwiftUI.">
-    <meta name="keywords" content="Japanese learning,JLPT,N5,N4,N3,N2,N1,Japanese vocabulary,Japanese grammar,AI learning,iOS app,SwiftUI,native iOS,language learning,conjugation practice">
+    <title>樱语 - 革命性智能日语学习应用 | 3000卡片智能随机系统 | iOS Native</title>
+    <meta name="description" content="樱语是革命性的iOS日语学习应用，采用3000卡片智能随机系统和Shannon熵多样性监控。集成DeepSeek AI，17,929个JLPT词汇，500+个性化头像，为中文用户优化设计。">
+    <meta name="keywords" content="樱语,日语学习,iOS应用,AI学习助手,JLPT,SwiftUI,DeepSeek,智能随机,Shannon熵,个性化头像">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="SakuraJP - Native iOS Japanese Learning with AI">
-    <meta property="og:description" content="Native iOS app for Japanese learning with AI tutoring, 17,929+ vocabulary words, and advanced conjugation practice. Built with Swift & SwiftUI.">
-    <meta property="og:image" content="https://sakura.miaowu.org/assets/og-image.png">
+    <meta property="og:title" content="樱语 - 革命性智能日语学习应用">
+    <meta property="og:description" content="采用3000卡片智能随机系统和Shannon熵多样性监控的现代化iOS应用。集成DeepSeek AI，17,929个JLPT词汇，500+个性化头像系统。">
+    <meta property="og:image" content="https://sakura.miaowu.org/assets/sakura-og-image.jpg">
     <meta property="og:url" content="https://sakura.miaowu.org/">
     <meta property="og:type" content="website">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="SakuraJP - Native iOS Japanese Learning with AI">
-    <meta name="twitter:description" content="Native iOS Japanese learning with AI tutoring, comprehensive JLPT vocabulary, and advanced conjugation practice.">
-    <meta name="twitter:image" content="https://sakura.miaowu.org/assets/og-image.png">
+    <meta name="twitter:title" content="樱语 - 革命性智能日语学习应用">
+    <meta name="twitter:description" content="3000卡片智能随机系统，DeepSeek AI集成，500+个性化头像的现代化iOS日语学习应用。">
+    <meta name="twitter:image" content="https://sakura.miaowu.org/assets/sakura-og-image.jpg">
     
     <!-- Apple Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="SakuraJP">
+    <meta name="apple-mobile-web-app-title" content="樱语">
+    <link rel="apple-touch-icon" href="/assets/app-icon-180.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=SF+Pro+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "樱语",
+        "description": "革命性智能日语学习应用，采用3000卡片智能随机系统和Shannon熵多样性监控，集成DeepSeek AI，17,929个JLPT词汇，500+个性化头像系统",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "iOS 18+",
+        "version": "2.6.0",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Person",
+            "name": "樱语开发团队"
+        },
+        "featureList": [
+            "3000卡片智能随机系统",
+            "Shannon熵多样性监控",
+            "DeepSeek AI集成",
+            "17,929个JLPT词汇",
+            "500+个性化头像",
+            "实时学习分析",
+            "高级搜索系统",
+            "社交分享功能"
+        ],
+        "requirements": "iOS 18.0+, iPhone 11+",
+        "memoryRequirements": "200MB",
+        "processorRequirements": "A13 Bionic或更高"
+    }
+    </script>
 </head>
 <body>
-    <!-- Theme toggle and navigation -->
-    <nav class="navbar" id="navbar">
+    <!-- Navigation -->
+    <nav class="navbar glassmorphic">
         <div class="container">
             <div class="nav-content">
                 <div class="nav-brand">
-                    <span class="logo-icon">🌸</span>
-                    <span class="logo-text">SakuraJP</span>
+                    <div class="logo-icon">🌸</div>
+                    <div class="logo-text">樱语</div>
                 </div>
-                <div class="nav-controls">
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                        <span class="theme-icon light">☀️</span>
-                        <span class="theme-icon dark">🌙</span>
-                    </button>
+                <div class="nav-links">
+                    <a href="#features" class="nav-link">功能</a>
+                    <a href="#screenshots" class="nav-link">预览</a>
+                    <a href="#download" class="nav-link cta-link">下载</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
-            <div class="hero-orbs">
-                <div class="orb orb-1"></div>
-                <div class="orb orb-2"></div>
-                <div class="orb orb-3"></div>
-            </div>
-        </div>
-        
+    <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-icon">🌸</span>
-                    <span>Native iOS App - Production Ready</span>
-                </div>
-                
-                <h1 class="hero-title">
-                    Master Japanese with
-                    <span class="gradient-text">Native iOS</span>
-                    Excellence
-                </h1>
-                
-                <p class="hero-description">
-                    Experience premium Japanese learning with SakuraJP's native iOS app. 
-                    Built with Swift & SwiftUI, featuring AI-powered tutoring, 17,929+ JLPT vocabulary, 
-                    advanced conjugation practice, and glassmorphic design.
-                </p>
-                
-                <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">
-                        <span class="btn-icon">📱</span>
-                        Download for iOS
-                    </a>
-                    <a href="#features" class="btn btn-secondary">
-                        <span class="btn-icon">▶️</span>
-                        Watch Demo
-                    </a>
-                </div>
-                
-                <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">17,929+</div>
-                        <div class="stat-label">Vocabulary Words</div>
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <span class="badge-icon">🌸</span>
+                        <span>Version 2.6.0 Production Ready</span>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">N5→N1</div>
-                        <div class="stat-label">JLPT Levels</div>
+                    <h1 class="hero-title">
+                        <span class="gradient-text">樱语</span><br>
+                        革命性智能日语学习
+                    </h1>
+                    <p class="hero-description">
+                        采用3000卡片智能随机系统和Shannon熵多样性监控的现代化iOS应用。
+                        <br>集成DeepSeek AI，个性化头像系统，为中文用户优化设计。
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#download" class="btn btn-primary">
+                            <span class="btn-icon">📱</span>
+                            <span>立即体验</span>
+                        </a>
+                        <a href="#features" class="btn btn-secondary">
+                            <span>了解功能</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">AI</div>
-                        <div class="stat-label">Grammar Correction</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">SwiftUI</div>
-                        <div class="stat-label">Native iOS</div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">17,929</div>
+                            <div class="stat-label">JLPT词汇</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3000</div>
+                            <div class="stat-label">智能卡片池</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">个性化头像</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">iOS 18+</div>
+                            <div class="stat-label">原生应用</div>
+                        </div>
                     </div>
                 </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <img src="/assets/hero-screenshot.jpg" alt="樱语应用主界面" class="screenshot">
+                            </div>
+                        </div>
+                        <div class="floating-card card-1">
+                            <div class="card-content">
+                                <div class="japanese">茶道の心</div>
+                                <div class="reading">さどうのこころ</div>
+                                <div class="chinese">茶道精神</div>
+                            </div>
+                        </div>
+                        <div class="floating-card card-2">
+                            <div class="card-content">
+                                <div class="ai-badge">AI</div>
+                                <div class="ai-text">例句生成中...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg">
+            <div class="sakura-petals">
+                <div class="petal petal-1">🌸</div>
+                <div class="petal petal-2">🌸</div>
+                <div class="petal petal-3">🌸</div>
+                <div class="petal petal-4">🌸</div>
+                <div class="petal petal-5">🌸</div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Powerful Features for Effective Learning</h2>
-                <p class="section-subtitle">Experience the most advanced Japanese learning tools available</p>
+                <h2 class="section-title">为什么选择樱语</h2>
+                <p class="section-description">
+                    专为中文母语者设计的日语学习体验，融合现代设计与AI技术
+                </p>
             </div>
             
-            <div class="features-showcase">
-                <!-- AI-Powered Learning -->
-                <div class="feature-card featured" data-feature="ai">
-                    <div class="feature-content">
-                        <div class="feature-header">
-                            <div class="feature-icon ai-icon">
-                                <span class="icon-gradient">🤖</span>
-                            </div>
-                            <div class="feature-badge">NEW</div>
-                        </div>
-                        <h3 class="feature-title">AI-Powered Language Tutoring</h3>
-                        <p class="feature-description">
-                            DeepSeek AI integration provides intelligent Japanese tutoring with 
-                            real-time sentence analysis, grammar correction, and personalized 
-                            explanations optimized for native learning experience.
-                        </p>
-                        <div class="feature-demo">
-                            <div class="demo-input">
-                                <span class="demo-label">Your input:</span>
-                                <span class="demo-text incorrect">私は学校を行きます</span>
-                            </div>
-                            <div class="demo-output">
-                                <span class="demo-label">AI correction:</span>
-                                <span class="demo-text correct">私は学校に行きます</span>
-                            </div>
-                        </div>
+            <div class="features-grid">
+                <div class="feature-card glassmorphic">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">3000卡片智能随机系统</h3>
+                    <p class="feature-description">
+                        革命性3000卡片池配合Shannon熵多样性监控，确保学习内容的最优分布。
+                        用户行为分析驱动个性化学习路径。
+                    </p>
+                    <div class="feature-highlight">
+                        <span class="highlight-text">Shannon熵监控 · 行为分析 · 智能推荐</span>
                     </div>
                 </div>
                 
-                <!-- Vocabulary Practice -->
-                <div class="feature-card" data-feature="vocabulary">
-                    <div class="feature-content">
-                        <div class="feature-header">
-                            <div class="feature-icon vocab-icon">
-                                <span class="icon-gradient">📚</span>
-                            </div>
-                        </div>
-                        <h3 class="feature-title">Complete JLPT Vocabulary Database</h3>
-                        <p class="feature-description">
-                            Master 17,929+ carefully curated JLPT vocabulary (N5-N1) with 
-                            17,791 example sentences. SQLite integration ensures lightning-fast 
-                            search across Japanese, Chinese, and Romaji.
-                        </p>
-                        <div class="vocabulary-preview">
-                            <div class="vocab-card">
-                                <div class="vocab-kanji">勉強</div>
-                                <div class="vocab-reading">べんきょう</div>
-                                <div class="vocab-meaning">study, learning</div>
-                                <div class="vocab-level">N4</div>
-                            </div>
-                        </div>
+                <div class="feature-card glassmorphic">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">DeepSeek AI集成</h3>
+                    <p class="feature-description">
+                        集成DeepSeek LLM，提供中文优化的例句生成和语法解释。
+                        支持多AI服务商配置，70%+缓存命中率确保离线学习。
+                    </p>
+                    <div class="feature-highlight">
+                        <span class="highlight-text">中文优化 · 多AI支持 · 离线缓存</span>
                     </div>
                 </div>
                 
-                <!-- Practice Modes -->
-                <div class="feature-card" data-feature="practice">
-                    <div class="feature-content">
-                        <div class="feature-header">
-                            <div class="feature-icon practice-icon">
-                                <span class="icon-gradient">🎯</span>
-                            </div>
-                        </div>
-                        <h3 class="feature-title">Advanced Conjugation Engine</h3>
-                        <p class="feature-description">
-                            Master 15+ verb conjugation forms and complete adjective patterns. 
-                            Interactive practice system with real-time feedback and progress 
-                            tracking built specifically for Japanese grammar complexity.
-                        </p>
-                        <div class="practice-modes">
-                            <div class="practice-mode">
-                                <span class="mode-icon">⚡</span>
-                                <span class="mode-name">Conjugation</span>
-                            </div>
-                            <div class="practice-mode">
-                                <span class="mode-icon">🗣️</span>
-                                <span class="mode-name">Voice</span>
-                            </div>
-                            <div class="practice-mode">
-                                <span class="mode-icon">📝</span>
-                                <span class="mode-name">Sentences</span>
-                            </div>
-                        </div>
+                <div class="feature-card glassmorphic">
+                    <div class="feature-icon">👤</div>
+                    <h3 class="feature-title">500+个性化头像系统</h3>
+                    <p class="feature-description">
+                        集成Dicebear API，提供500+种头像组合。
+                        个性化用户档案，支持社交分享卡片生成。
+                    </p>
+                    <div class="feature-highlight">
+                        <span class="highlight-text">500+头像 · 社交分享 · 个性档案</span>
                     </div>
                 </div>
                 
-                <!-- Progress Tracking -->
-                <div class="feature-card" data-feature="progress">
-                    <div class="feature-content">
-                        <div class="feature-header">
-                            <div class="feature-icon progress-icon">
-                                <span class="icon-gradient">📊</span>
-                            </div>
-                        </div>
-                        <h3 class="feature-title">Native iOS Performance</h3>
-                        <p class="feature-description">
-                            Built with Swift & SwiftUI for optimal performance. Smooth 60fps 
-                            animations, glassmorphic design, and seamless iOS integration 
-                            with Dark Mode and accessibility support.
-                        </p>
-                        <div class="progress-chart">
-                            <div class="chart-bar" style="--progress: 85%" data-label="Vocabulary"></div>
-                            <div class="chart-bar" style="--progress: 72%" data-label="Grammar"></div>
-                            <div class="chart-bar" style="--progress: 90%" data-label="Listening"></div>
-                        </div>
+                <div class="feature-card glassmorphic">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">综合学习分析</h3>
+                    <p class="feature-description">
+                        实时学习进度跟踪，行为模式分析，性能监控。
+                        今日成就展示，学习连击统计，目标可视化。
+                    </p>
+                    <div class="feature-highlight">
+                        <span class="highlight-text">实时分析 · 行为监控 · 成就系统</span>
                     </div>
                 </div>
                 
-                <!-- Dark Mode -->
-                <div class="feature-card" data-feature="darkmode">
-                    <div class="feature-content">
-                        <div class="feature-header">
-                            <div class="feature-icon darkmode-icon">
-                                <span class="icon-gradient">🌙</span>
-                            </div>
-                        </div>
-                        <h3 class="feature-title">Glassmorphic Cherry Blossom UI</h3>
-                        <p class="feature-description">
-                            Stunning glassmorphic design with cherry blossom aesthetics. 
-                            Native iOS materials, smooth animations, and cultural design 
-                            elements that make learning Japanese a beautiful experience.
-                        </p>
-                        <div class="theme-preview">
-                            <div class="theme-sample light-theme">
-                                <div class="theme-header"></div>
-                                <div class="theme-content"></div>
-                            </div>
-                            <div class="theme-toggle-icon">⇄</div>
-                            <div class="theme-sample dark-theme">
-                                <div class="theme-header"></div>
-                                <div class="theme-content"></div>
-                            </div>
-                        </div>
+                <div class="feature-card glassmorphic">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">高级搜索系统</h3>
+                    <p class="feature-description">
+                        闪电般快速搜索17,929词汇，完美键盘管理。
+                        支持日语、中文、罗马音、英文多语言搜索。
+                    </p>
+                    <div class="feature-highlight">
+                        <span class="highlight-text">实时搜索 · 多语言 · 智能建议</span>
+                    </div>
+                </div>
+                
+                <div class="feature-card glassmorphic">
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">现代iOS设计</h3>
+                    <p class="feature-description">
+                        iOS 18+原生玻璃态界面，60fps流畅动画。
+                        95% WCAG无障碍合规，完整明暗主题支持。
+                    </p>
+                    <div class="feature-highlight">
+                        <span class="highlight-text">玻璃态UI · 60fps · 无障碍优化</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- App Screenshots Section -->
-    <section class="screenshots" id="screenshots">
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="screenshots">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Experience SakuraJP</h2>
-                <p class="section-subtitle">See the app in action with real screenshots</p>
+                <h2 class="section-title">应用预览</h2>
+                <p class="section-description">
+                    体验优雅的日语学习界面设计
+                </p>
             </div>
             
-            <div class="screenshots-showcase">
-                <div class="device-mockup">
-                    <div class="iphone-frame">
-                        <div class="screenshot-placeholder">
-                            <div class="mock-interface">
-                                <div class="mock-header">
-                                    <div class="mock-title">SakuraJP</div>
-                                    <div class="mock-toggle">🌙</div>
-                                </div>
-                                <div class="mock-card main-card">
-                                    <div class="mock-icon">📚</div>
-                                    <div class="mock-content">
-                                        <div class="mock-text large">Vocabulary Practice</div>
-                                        <div class="mock-text small">Master Japanese words systematically</div>
-                                    </div>
-                                </div>
-                                <div class="mock-features">
-                                    <div class="mock-feature">
-                                        <div class="mock-icon small">🤖</div>
-                                        <div class="mock-text">AI Grammar</div>
-                                    </div>
-                                    <div class="mock-feature">
-                                        <div class="mock-icon small">⚡</div>
-                                        <div class="mock-text">Conjugation</div>
-                                    </div>
-                                    <div class="mock-feature">
-                                        <div class="mock-icon small">📊</div>
-                                        <div class="mock-text">Progress</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <div class="screenshots-carousel">
+                <div class="screenshot-item">
+                    <img src="/assets/screenshot-discovery.png" alt="发现页面" class="screenshot-img">
+                    <div class="screenshot-caption">
+                        <h4>智能发现学习</h4>
+                        <p>3000卡片智能随机系统</p>
                     </div>
                 </div>
+                <div class="screenshot-item">
+                    <img src="/assets/screenshot-knowledge.png" alt="知识扩展" class="screenshot-img">
+                    <div class="screenshot-caption">
+                        <h4>AI知识扩展</h4>
+                        <p>DeepSeek智能例句生成</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="/assets/screenshot-profile.png" alt="个人页面" class="screenshot-img">
+                    <div class="screenshot-caption">
+                        <h4>个性化头像系统</h4>
+                        <p>500+头像组合</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="/assets/screenshot-ai-config.png" alt="AI配置" class="screenshot-img">
+                    <div class="screenshot-caption">
+                        <h4>AI服务配置</h4>
+                        <p>多AI服务商支持</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="/assets/screenshot-favorites.png" alt="收藏页面" class="screenshot-img">
+                    <div class="screenshot-caption">
+                        <h4>智能收藏系统</h4>
+                        <p>个人学习词典</p>
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <img src="/assets/screenshot-share.png" alt="分享卡片" class="screenshot-img">
+                    <div class="screenshot-caption">
+                        <h4>社交分享卡片</h4>
+                        <p>个性化学习成果展示</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications Section -->
+    <section id="tech-specs" class="tech-specs">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">技术规格</h2>
+                <p class="section-description">
+                    Production Ready - Version 2.6.0 性能指标
+                </p>
+            </div>
+            
+            <div class="specs-grid">
+                <div class="spec-card glassmorphic">
+                    <div class="spec-icon">⚡</div>
+                    <h3 class="spec-title">启动性能</h3>
+                    <div class="spec-value">&lt;2.5秒</div>
+                    <p class="spec-description">应用启动时间，iPhone 11+设备</p>
+                </div>
                 
-                <div class="screenshots-features">
-                    <div class="screenshot-feature">
-                        <h3>Swift & SwiftUI Excellence</h3>
-                        <p>Built entirely with native iOS technologies for optimal performance and seamless system integration</p>
+                <div class="spec-card glassmorphic">
+                    <div class="spec-icon">🔍</div>
+                    <h3 class="spec-title">搜索响应</h3>
+                    <div class="spec-value">&lt;100ms</div>
+                    <p class="spec-description">17,929词汇实时搜索响应时间</p>
+                </div>
+                
+                <div class="spec-card glassmorphic">
+                    <div class="spec-icon">🧠</div>
+                    <h3 class="spec-title">内存使用</h3>
+                    <div class="spec-value">&lt;120MB</div>
+                    <p class="spec-description">正常使用时平均内存占用</p>
+                </div>
+                
+                <div class="spec-card glassmorphic">
+                    <div class="spec-icon">🎬</div>
+                    <h3 class="spec-title">动画性能</h3>
+                    <div class="spec-value">60fps</div>
+                    <p class="spec-description">流畅动画帧率保证</p>
+                </div>
+                
+                <div class="spec-card glassmorphic">
+                    <div class="spec-icon">🤖</div>
+                    <h3 class="spec-title">AI响应</h3>
+                    <div class="spec-value">&lt;3秒</div>
+                    <p class="spec-description">DeepSeek AI例句生成时间</p>
+                </div>
+                
+                <div class="spec-card glassmorphic">
+                    <div class="spec-icon">♿</div>
+                    <h3 class="spec-title">无障碍支持</h3>
+                    <div class="spec-value">95%</div>
+                    <p class="spec-description">WCAG合规性评分</p>
+                </div>
+            </div>
+            
+            <div class="platform-requirements">
+                <h3 class="requirements-title">系统要求</h3>
+                <div class="requirements-grid">
+                    <div class="requirement-item">
+                        <span class="req-label">操作系统</span>
+                        <span class="req-value">iOS 18.0+</span>
                     </div>
-                    <div class="screenshot-feature">
-                        <h3>Cherry Blossom Aesthetics</h3>
-                        <p>Beautiful glassmorphic design with Japanese cultural elements and smooth 60fps animations</p>
+                    <div class="requirement-item">
+                        <span class="req-label">设备支持</span>
+                        <span class="req-value">iPhone 11及以上</span>
                     </div>
-                    <div class="screenshot-feature">
-                        <h3>Production-Ready Quality</h3>
-                        <p>Comprehensive testing, accessibility compliance, and App Store optimization for the best user experience</p>
+                    <div class="requirement-item">
+                        <span class="req-label">存储空间</span>
+                        <span class="req-value">~200MB</span>
+                    </div>
+                    <div class="requirement-item">
+                        <span class="req-label">网络要求</span>
+                        <span class="req-value">AI功能需要网络连接</span>
                     </div>
                 </div>
             </div>
@@ -323,64 +390,38 @@
     </section>
 
     <!-- Download Section -->
-    <section class="download" id="download">
-        <div class="download-background">
-            <div class="download-gradient"></div>
-        </div>
-        
+    <section id="download" class="download">
         <div class="container">
             <div class="download-content">
-                <div class="download-header">
-                    <h2 class="download-title">Ready to Master Japanese?</h2>
-                    <p class="download-subtitle">
-                        Join thousands of learners who have transformed their Japanese skills with SakuraJP
+                <div class="download-text">
+                    <h2 class="download-title">准备开始学习了吗？</h2>
+                    <p class="download-description">
+                        下载樱语，开启你的日语学习之旅。
+                        <br>现代化的学习体验正在等待你。
                     </p>
-                </div>
-                
-                <div class="download-options">
-                    <div class="download-card primary">
-                        <div class="download-icon">🌸</div>
-                        <h3>Native iOS Experience</h3>
-                        <p>Production-ready app available via TestFlight with App Store launch coming soon</p>
-                        <div class="download-buttons">
-                            <a href="#" class="btn btn-download testflight">
-                                <span class="btn-icon">✈️</span>
-                                TestFlight Beta
-                            </a>
-                            <a href="#" class="btn btn-download appstore">
-                                <span class="btn-icon">🍎</span>
-                                App Store
-                            </a>
+                    <div class="download-features">
+                        <div class="download-feature">
+                            <span class="feature-check">✓</span>
+                            <span>完全免费使用</span>
                         </div>
-                    </div>
-                    
-                    <div class="download-stats">
-                        <div class="stat-item">
-                            <div class="stat-icon">⭐</div>
-                            <div class="stat-text">
-                                <div class="stat-number">4.9</div>
-                                <div class="stat-label">User Rating</div>
-                            </div>
+                        <div class="download-feature">
+                            <span class="feature-check">✓</span>
+                            <span>无广告干扰</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">📈</div>
-                            <div class="stat-text">
-                                <div class="stat-number">10K+</div>
-                                <div class="stat-label">Active Users</div>
-                            </div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-icon">🎯</div>
-                            <div class="stat-text">
-                                <div class="stat-number">95%</div>
-                                <div class="stat-label">Success Rate</div>
-                            </div>
+                        <div class="download-feature">
+                            <span class="feature-check">✓</span>
+                            <span>持续更新优化</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="download-note">
-                    <p><strong>Native iOS App</strong> • iOS 18.0+ • Swift & SwiftUI • Production Ready • TestFlight Available</p>
+                <div class="download-actions">
+                    <a href="https://apps.apple.com/app/sakurajp" class="download-btn app-store" target="_blank">
+                        <img src="/assets/app-store-badge.svg" alt="App Store下载" class="store-badge">
+                    </a>
+                    <div class="qr-code">
+                        <img src="/assets/qr-code.png" alt="扫码下载" class="qr-img">
+                        <p class="qr-text">扫码下载</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -391,60 +432,46 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <div class="logo">
+                    <div class="brand-logo">
                         <span class="logo-icon">🌸</span>
-                        <span class="logo-text">SakuraJP</span>
+                        <span class="logo-text">樱语</span>
                     </div>
-                    <p class="footer-description">
-                        Native iOS Japanese learning app with AI tutoring, built with Swift & SwiftUI
-                    </p>
-                    <div class="social-links">
-                        <a href="https://github.com/oiahoon/SakuraJP-ios" target="_blank" aria-label="GitHub">
-                            <span class="social-icon">🔗</span>
-                            GitHub
-                        </a>
-                        <a href="mailto:support@sakurajp.app" aria-label="Email Support">
-                            <span class="social-icon">📧</span>
-                            Email
-                        </a>
-                    </div>
+                    <p class="brand-tagline">AI驱动的现代日语学习</p>
                 </div>
                 
                 <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>App</h4>
-                        <a href="#features">Features</a>
-                        <a href="#download">Download</a>
-                        <a href="#screenshots">Screenshots</a>
+                    <div class="link-group">
+                        <h4 class="link-title">应用</h4>
+                        <a href="#features" class="footer-link">功能特色</a>
+                        <a href="#screenshots" class="footer-link">应用预览</a>
+                        <a href="#download" class="footer-link">下载</a>
                     </div>
-                    <div class="footer-column">
-                        <h4>Support</h4>
-                        <a href="mailto:support@sakurajp.app">Contact Support</a>
-                        <a href="https://github.com/oiahoon/SakuraJP-ios/issues">Report Issues</a>
-                        <a href="support.html">Help Center</a>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Legal</h4>
-                        <a href="privacy.html">Privacy Policy</a>
-                        <a href="terms.html">Terms of Service</a>
-                        <a href="https://github.com/oiahoon/SakuraJP-ios">Open Source</a>
+                    <div class="link-group">
+                        <h4 class="link-title">支持</h4>
+                        <a href="/support.html" class="footer-link">帮助中心</a>
+                        <a href="/privacy.html" class="footer-link">隐私政策</a>
+                        <a href="/terms.html" class="footer-link">使用条款</a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <div class="footer-credits">
-                    <p>&copy; 2025 SakuraJP. All rights reserved.</p>
-                    <p>Made with <span class="heart">❤️</span> by <strong>onice</strong> for Japanese learners worldwide</p>
-                </div>
-                <div class="footer-version">
-                    <span class="version-badge">Native iOS</span>
+                <p class="copyright">© 2025 樱语. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
-    
+
     <!-- Scripts -->
     <script src="script.js"></script>
+    
+    <!-- Analytics (replace with your tracking ID) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script> -->
 </body>
 </html>
