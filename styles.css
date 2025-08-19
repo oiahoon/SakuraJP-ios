@@ -925,43 +925,60 @@ section {
 }
 
 .phone-frame {
-    width: 280px;
-    height: 560px;
-    background: linear-gradient(145deg, #2D2D2D, #1A1A1A);
-    border-radius: 40px;
-    padding: 20px;
+    width: 300px;
+    height: 600px;
+    background: linear-gradient(145deg, #1d1d1f, #000000);
+    border-radius: 50px;
+    padding: 8px;
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.3),
-        inset 0 2px 4px rgba(255, 255, 255, 0.1);
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
     position: relative;
+    border: 2px solid #2d2d2f;
 }
 
 .phone-frame::before {
     content: '';
     position: absolute;
-    top: 15px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 30px;
+    background: #000000;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+.phone-frame::after {
+    content: '';
+    position: absolute;
+    top: 28px;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
     height: 6px;
     background: #333;
     border-radius: 3px;
+    z-index: 11;
 }
 
 .phone-screen {
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, 
-        rgba(248, 187, 217, 0.1) 0%,
-        rgba(255, 255, 255, 0.05) 50%,
-        rgba(225, 179, 211, 0.1) 100%);
-    border-radius: 30px;
+        rgba(248, 187, 217, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(225, 179, 211, 0.08) 100%);
+    border-radius: 42px;
     overflow: hidden;
     position: relative;
+    backdrop-filter: blur(10px);
 }
 
 .demo-content {
-    padding: var(--space-8);
+    padding: var(--space-12) var(--space-6);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -971,19 +988,21 @@ section {
 
 .demo-card {
     width: 100%;
-    max-width: 220px;
+    max-width: 240px;
     padding: var(--space-6);
-    border-radius: var(--radius-lg);
-    backdrop-filter: blur(20px);
-    background: var(--glass-white-strong);
-    border: 1px solid var(--glass-border);
-    box-shadow: 0 10px 30px rgba(248, 187, 217, 0.2);
-    animation: cardFloat 3s ease-in-out infinite;
+    border-radius: 20px;
+    backdrop-filter: blur(30px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(248, 187, 217, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.1);
+    animation: cardFloat 4s ease-in-out infinite;
 }
 
 @keyframes cardFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-8px) scale(1.02); }
 }
 
 .card-header {
@@ -997,59 +1016,70 @@ section {
     background: var(--sakura-primary);
     color: white;
     padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    font-size: var(--text-xs);
+    border-radius: 12px;
+    font-size: 11px;
     font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .card-type {
-    font-size: var(--text-xs);
-    color: var(--gray-600);
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.6);
     font-weight: 500;
+    background: rgba(255, 255, 255, 0.3);
+    padding: var(--space-1) var(--space-2);
+    border-radius: 8px;
 }
 
 .card-main {
     text-align: center;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-5);
 }
 
 .japanese-text {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    color: var(--gray-800);
+    color: #1d1d1f;
     margin-bottom: var(--space-2);
+    line-height: 1.2;
 }
 
 .reading-text {
-    font-size: var(--text-sm);
-    color: var(--gray-600);
-    margin-bottom: var(--space-2);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: var(--space-3);
+    font-weight: 400;
 }
 
 .meaning-text {
-    font-size: var(--text-base);
+    font-size: 16px;
     color: var(--sakura-primary);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .card-example {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-2);
     padding: var(--space-3);
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
     margin-bottom: var(--space-4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .example-icon {
-    font-size: var(--text-sm);
+    display: flex;
+    align-items: center;
+    color: var(--sakura-primary);
+    margin-top: 2px;
 }
 
 .example-text {
-    font-size: var(--text-xs);
-    color: var(--gray-700);
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.7);
     line-height: 1.4;
+    flex: 1;
 }
 
 .card-actions {
@@ -1064,42 +1094,51 @@ section {
     align-items: center;
     gap: var(--space-1);
     padding: var(--space-2) var(--space-3);
-    background: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: var(--radius-md);
-    font-size: var(--text-xs);
-    color: var(--gray-700);
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.7);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .action-btn:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(248, 187, 217, 0.2);
 }
 
 .action-btn.favorite .btn-icon {
     color: var(--sakura-primary);
 }
 
+.action-btn.ai {
+    background: rgba(248, 187, 217, 0.3);
+    border-color: rgba(248, 187, 217, 0.4);
+}
+
 .demo-nav {
-    margin-top: var(--space-6);
+    margin-top: var(--space-8);
     text-align: center;
 }
 
 .nav-hint {
-    font-size: var(--text-xs);
-    color: var(--gray-500);
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
     padding: var(--space-2) var(--space-4);
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: var(--radius-full);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .demo-features {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
+    gap: var(--space-8);
+    padding-left: var(--space-4);
 }
 
 .demo-feature {
@@ -1111,6 +1150,11 @@ section {
 .demo-feature .feature-icon {
     font-size: 1.5rem;
     margin-top: var(--space-1);
+    color: var(--sakura-primary);
+    background: rgba(248, 187, 217, 0.1);
+    padding: var(--space-2);
+    border-radius: 12px;
+    border: 1px solid rgba(248, 187, 217, 0.2);
 }
 
 .demo-feature h4 {
@@ -1224,24 +1268,35 @@ section {
 @media (max-width: 768px) {
     .demo-container {
         grid-template-columns: 1fr;
-        gap: var(--space-8);
+        gap: var(--space-12);
         text-align: center;
     }
     
     .phone-frame {
-        width: 240px;
-        height: 480px;
+        width: 260px;
+        height: 520px;
+    }
+    
+    .demo-card {
+        max-width: 200px;
+        padding: var(--space-5);
+    }
+    
+    .japanese-text {
+        font-size: 2rem;
     }
     
     .demo-features {
         align-items: center;
         text-align: center;
+        padding-left: 0;
     }
     
     .demo-feature {
         flex-direction: column;
         text-align: center;
-        gap: var(--space-2);
+        gap: var(--space-3);
+        max-width: 300px;
     }
     
     .download-content {
