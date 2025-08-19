@@ -402,35 +402,57 @@ p {
     z-index: 2;
 }
 
-.phone-frame {
-    width: 280px;
-    height: 570px;
-    background: var(--gray-900);
-    border-radius: 40px;
+.hero-visual .phone-frame {
+    width: 300px;
+    height: 600px;
+    background: linear-gradient(145deg, #1d1d1f, #000000);
+    border-radius: 50px;
     padding: 8px;
-    box-shadow: var(--shadow-xl);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.4),
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 2px rgba(255, 255, 255, 0.1);
     position: relative;
+    border: 2px solid #2d2d2f;
 }
 
-.phone-frame::before {
+.hero-visual .phone-frame::before {
     content: '';
     position: absolute;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
     width: 120px;
-    height: 6px;
-    background: var(--gray-700);
-    border-radius: var(--radius-full);
+    height: 30px;
+    background: #000000;
+    border-radius: 20px;
+    z-index: 10;
 }
 
-.phone-screen {
+.hero-visual .phone-frame::after {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 6px;
+    background: #333;
+    border-radius: 3px;
+    z-index: 11;
+}
+
+.hero-visual .phone-screen {
     width: 100%;
     height: 100%;
-    background: var(--white);
-    border-radius: 32px;
+    background: linear-gradient(135deg, 
+        rgba(248, 187, 217, 0.08) 0%,
+        rgba(255, 255, 255, 0.03) 50%,
+        rgba(225, 179, 211, 0.08) 100%);
+    border-radius: 42px;
     overflow: hidden;
     position: relative;
+    backdrop-filter: blur(10px);
 }
 
 .screenshot {
@@ -1132,6 +1154,11 @@ section {
     border-radius: 20px;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    margin: 0 auto;
 }
 
 .demo-features {
@@ -1277,6 +1304,11 @@ section {
         height: 520px;
     }
     
+    .hero-visual .phone-frame {
+        width: 260px;
+        height: 520px;
+    }
+    
     .demo-card {
         max-width: 200px;
         padding: var(--space-5);
@@ -1284,6 +1316,12 @@ section {
     
     .japanese-text {
         font-size: 2rem;
+    }
+    
+    .nav-hint {
+        font-size: 10px;
+        padding: var(--space-1) var(--space-3);
+        max-width: 150px;
     }
     
     .demo-features {
