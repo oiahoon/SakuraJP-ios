@@ -1340,6 +1340,16 @@ section {
         max-width: 150px;
     }
     
+    /* Hide AI button text on small screens */
+    .action-btn.ai .btn-text {
+        display: none;
+    }
+    
+    .action-btn.ai {
+        min-width: auto;
+        padding: var(--space-2);
+    }
+    
     .demo-features {
         align-items: center;
         text-align: center;
