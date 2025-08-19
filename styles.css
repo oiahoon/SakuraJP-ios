@@ -1256,6 +1256,85 @@ section {
     }
 }
 
+/* Icon Styles */
+.logo-icon svg,
+.badge-icon svg,
+.btn-icon svg,
+.btn-arrow svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--sakura-primary);
+}
+
+.badge-icon {
+    display: inline-flex;
+    align-items: center;
+    color: var(--sakura-primary);
+}
+
+.btn-icon {
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-arrow {
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.btn:hover .btn-arrow {
+    transform: translateX(2px);
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    color: var(--sakura-primary);
+}
+
+.experience-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    color: var(--sakura-primary);
+}
+
+.coming-soon-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    color: var(--sakura-primary);
+}
+
+.example-icon {
+    display: flex;
+    align-items: center;
+    color: var(--sakura-primary);
+}
+
+.action-btn .btn-icon {
+    color: var(--gray-600);
+}
+
+.action-btn.favorite .btn-icon {
+    color: var(--sakura-primary);
+}
+
+.action-btn:hover .btn-icon {
+    color: var(--sakura-primary);
+}
+
 /* Focus states */
 .btn:focus-visible,
 .nav-link:focus-visible,
