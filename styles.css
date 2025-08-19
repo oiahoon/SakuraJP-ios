@@ -905,7 +905,23 @@ section {
     }
     
     .floating-card {
-        display: none;
+        transform: scale(0.8);
+        padding: var(--space-3);
+    }
+    
+    .floating-card.card-1 {
+        top: 15%;
+        right: -10%;
+    }
+    
+    .floating-card.card-2 {
+        bottom: 20%;
+        left: -15%;
+    }
+    
+    .sakura-petals .petal {
+        font-size: 1.5rem;
+        opacity: 0.4;
     }
 }
 
