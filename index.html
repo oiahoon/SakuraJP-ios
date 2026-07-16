@@ -1,546 +1,226 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>樱语 - 优雅的日语学习体验 | iOS Native App</title>
-    <meta name="description" content="樱语是一款现代化的iOS日语学习应用，采用优雅的卡片式设计和AI智能助手，为中文用户提供个性化的日语学习体验。">
-    <meta name="keywords" content="樱语,日语学习,iOS应用,AI学习助手,JLPT,SwiftUI,个性化学习">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="樱语 - 优雅的日语学习体验">
-    <meta property="og:description" content="现代化的iOS日语学习应用，采用优雅的卡片式设计和AI智能助手，为中文用户提供个性化的学习体验。">
-    <meta property="og:image" content="https://sakura.miaowu.org/assets/sakura-og-image.jpg">
-    <meta property="og:url" content="https://sakura.miaowu.org/">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="樱语 - 优雅的日语学习体验">
-    <meta name="twitter:description" content="现代化的iOS日语学习应用，采用优雅的卡片式设计和AI智能助手。">
-    <meta name="twitter:image" content="https://sakura.miaowu.org/assets/sakura-og-image.jpg">
-    
-    <!-- Apple Meta Tags -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="樱语">
-    <link rel="apple-touch-icon" href="/assets/app-icon-180.png">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "MobileApplication",
-        "name": "樱语",
-        "description": "优雅的iOS日语学习应用，采用现代化设计和AI智能助手，为中文用户提供个性化的学习体验",
-        "applicationCategory": "EducationalApplication",
-        "operatingSystem": "iOS",
-        "author": {
-            "@type": "Person",
-            "name": "樱语开发团队"
-        },
-        "featureList": [
-            "智能卡片学习",
-            "AI学习助手",
-            "个性化体验",
-            "优雅设计",
-            "JLPT支持"
-        ]
-    }
-    </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>樱语 Sakura JP｜给中文母语者的日语学习工作台</title>
+  <meta name="description" content="樱语 Sakura JP 是一款面向中文母语者的 iOS 日语学习应用，提供今日学习、影子跟读、知识架、复习与学习统计，以及可选的 AI 学习解释。">
+  <meta name="theme-color" content="#fffafa">
+  <meta property="og:title" content="樱语 Sakura JP｜日语学习工作台">
+  <meta property="og:description" content="把发现、跟读、收藏与复习放进一个安静、清晰的 iOS 学习空间。">
+  <meta property="og:image" content="https://sakura.miaowu.org/assets/sakura-ink-wash-hero.webp">
+  <meta property="og:url" content="https://sakura.miaowu.org/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://sakura.miaowu.org/">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "樱语 Sakura JP",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "iOS",
+    "description": "面向中文母语者的日语学习工作台，包含发现学习、复习、影子跟读、知识收藏、学习统计和可选 AI 解释。",
+    "url": "https://sakura.miaowu.org/",
+    "downloadUrl": "https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407",
+    "softwareVersion": "2.1.2"
+  }
+  </script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar glassmorphic">
-        <div class="container">
-            <div class="nav-content">
-                <div class="nav-brand">
-                    <div class="logo-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">樱语</div>
-                </div>
-                <div class="nav-links">
-                    <a href="#features" class="nav-link">功能</a>
-                    <a href="#demo" class="nav-link">体验</a>
-                    <a href="#download" class="nav-link cta-link">立即下载</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+  <header class="site-header">
+    <div class="shell nav-shell">
+      <a class="brand" href="index.html" aria-label="樱语首页">
+        <span class="brand-mark" aria-hidden="true">桜</span>
+        <span><strong>樱语</strong><small>Sakura JP</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要导航">
+        <a href="#workspace">学习空间</a>
+        <a href="grammar.html">语法解析</a>
+        <a href="support.html">支持</a>
+        <a class="nav-cta" href="https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407">App Store</a>
+      </nav>
+      <details class="mobile-nav">
+        <summary>菜单</summary>
+        <nav aria-label="移动导航">
+          <a href="#workspace">学习空间</a>
+          <a href="grammar.html">语法解析</a>
+          <a href="support.html">支持</a>
+          <a href="https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407">App Store</a>
+        </nav>
+      </details>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="badge-icon">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                            </svg>
-                        </span>
-                        <span>优雅的日语学习体验</span>
-                    </div>
-                    <h1 class="hero-title">
-                        <span class="gradient-text">樱语</span><br>
-                        让日语学习变得简单而美好
-                    </h1>
-                    <p class="hero-description">
-                        现代化的iOS日语学习应用，采用优雅的卡片式设计。
-                        <br>AI智能助手让学习更加个性化，为中文用户精心优化。
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#features" class="btn btn-primary">
-                            <span class="btn-icon">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                </svg>
-                            </span>
-                            <span>探索功能</span>
-                        </a>
-                        <a href="#demo" class="btn btn-secondary">
-                            <span>体验演示</span>
-                            <span class="btn-arrow">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </span>
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">JLPT</div>
-                            <div class="stat-label">全等级支持</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">AI</div>
-                            <div class="stat-label">智能助手</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">iOS</div>
-                            <div class="stat-label">原生应用</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <div class="phone-mockup">
-                        <div class="phone-frame">
-                            <div class="phone-screen">
-                                <div class="demo-content">
-                                    <!-- Demo Learning Card -->
-                                    <div class="demo-card glassmorphic">
-                                        <div class="card-header">
-                                            <div class="jlpt-badge">N5</div>
-                                            <div class="card-type">文化</div>
-                                        </div>
-                                        <div class="card-main">
-                                            <div class="japanese-text">茶道の心</div>
-                                            <div class="reading-text">さどうのこころ</div>
-                                            <div class="meaning-text">茶道精神</div>
-                                        </div>
-                                        <div class="card-example">
-                                            <div class="example-icon">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                </svg>
-                                            </div>
-                                            <div class="example-text">日本茶道重视"时令食材"的文化哦。</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="floating-card card-1">
-                            <div class="card-content">
-                                <div class="ai-badge">AI</div>
-                                <div class="ai-text">例句生成中...</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <main id="main">
+    <section class="hero home-hero">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Sakura JP 2.1.2 · iOS 原生体验</p>
+          <h1>把日语学习，<br>整理成每天愿意<br>打开的空间。</h1>
+          <p class="lead">为中文母语者设计的日语学习工作台。发现新知识、听与跟读、收藏整理，再回到适合今天的复习节奏。</p>
+          <div class="button-row">
+            <a class="button primary" href="https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407">在 App Store 下载</a>
+            <a class="button secondary" href="#workspace">认识四个学习空间</a>
+          </div>
+          <ul class="trust-list" aria-label="产品特点">
+            <li>中文语境解释</li>
+            <li>本地学习进度</li>
+            <li>可选 AI 辅助</li>
+          </ul>
         </div>
-        <div class="hero-bg">
-            <div class="sakura-petals">
-                <div class="petal petal-1">🌸</div>
-                <div class="petal petal-2">🌸</div>
-                <div class="petal petal-3">🌸</div>
-                <div class="petal petal-4">🌸</div>
-                <div class="petal petal-5">🌸</div>
-            </div>
-        </div>
+        <figure class="app-shot hero-shot">
+          <img src="assets/app-screens/profile.webp" width="720" height="1562" alt="樱语 2.1.2 的我的页面，显示学习进度、学习设置、AI 助手和语音设置">
+          <figcaption>真实应用界面 · iPhone 17 Pro Simulator</figcaption>
+        </figure>
+      </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">为什么选择樱语</h2>
-                <p class="section-description">
-                    专为中文用户设计的日语学习体验，融合现代设计与智能技术
-                </p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card glassmorphic">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">智能发现学习</h3>
-                    <p class="feature-description">
-                        优雅的卡片式学习界面，通过简单的手势操作进行高效学习。
-                        智能算法确保每次学习都有新的发现和收获。
-                    </p>
-                    <div class="feature-highlight">
-                        <span class="highlight-text">卡片学习 · 智能推荐 · 个性化</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card glassmorphic">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M9.813 15.904L9 18.75L10.813 17.438L12.75 18.75L10.875 15.904M12.75 12L10.875 9.154L12.75 6.75L10.813 8.063L9 6.75L9.813 9.154M15 12C15 13.657 13.657 15 12 15C10.343 15 9 13.657 9 12C9 10.343 10.343 9 12 9C13.657 9 15 10.343 15 12Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">AI学习助手</h3>
-                    <p class="feature-description">
-                        集成先进的AI技术，提供个性化的例句生成和语法解释。
-                        专为中文用户优化，学习建议更贴合中文语境。
-                    </p>
-                    <div class="feature-highlight">
-                        <span class="highlight-text">智能例句 · 语法扩展 · 中文优化</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card glassmorphic">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 19.5C4 18.837 4.263 18.201 4.732 17.732C5.201 17.263 5.837 17 6.5 17H20V4C20 3.46957 19.7893 2.96086 19.4142 2.58579C19.0391 2.21071 18.5304 2 18 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V19.5ZM4 19.5V21C4 21.2652 4.10536 21.5196 4.29289 21.7071C4.48043 21.8946 4.73478 22 5 22H18.5C19.163 22 19.799 21.737 20.268 21.268C20.737 20.799 21 20.163 21 19.5C21 18.837 20.737 18.201 20.268 17.732C19.799 17.263 19.163 17 18.5 17H4V19.5Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">完整JLPT体系</h3>
-                    <p class="feature-description">
-                        涵盖JLPT全等级词汇和语法，配备详细例句和文化背景。
-                        支持按等级学习和个性化练习安排。
-                    </p>
-                    <div class="feature-highlight">
-                        <span class="highlight-text">全等级 · 完整例句 · 文化背景</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card glassmorphic">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">个性化体验</h3>
-                    <p class="feature-description">
-                        丰富的个性化头像系统，打造专属的学习档案。
-                        支持学习成果分享，与朋友一起进步。
-                    </p>
-                    <div class="feature-highlight">
-                        <span class="highlight-text">个性头像 · 学习档案 · 社交分享</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card glassmorphic">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M15.5 14H20.5L22 15.5V20.5L20.5 22H15.5L14 20.5V15.5L15.5 14ZM18 17.5C18 16.67 17.33 16 16.5 16S15 16.67 15 17.5 15.67 19 16.5 19 18 18.33 18 17.5ZM9 11H15L16.5 9.5V4.5L15 3H9L7.5 4.5V9.5L9 11ZM12 6.5C12 5.67 11.33 5 10.5 5S9 5.67 9 6.5 9.67 8 10.5 8 12 7.33 12 6.5Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">智能搜索</h3>
-                    <p class="feature-description">
-                        强大的搜索功能，支持日语、中文、罗马音多种输入方式。
-                        智能建议和历史记录让查找更加便捷。
-                    </p>
-                    <div class="feature-highlight">
-                        <span class="highlight-text">多语言搜索 · 智能建议 · 便捷查找</span>
-                    </div>
-                </div>
-                
-                <div class="feature-card glassmorphic">
-                    <div class="feature-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">优雅设计</h3>
-                    <p class="feature-description">
-                        采用iOS原生设计语言，玻璃态效果和樱花主题。
-                        流畅的动画和精致的细节带来愉悦的使用体验。
-                    </p>
-                    <div class="feature-highlight">
-                        <span class="highlight-text">玻璃态UI · 流畅动画 · 精致细节</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="proof-strip" aria-label="当前版本能力">
+      <div class="shell proof-grid">
+        <div><strong>四个学习空间</strong><span>发现 · 跟读 · 收藏 · 我的</span></div>
+        <div><strong>JLPT N5–N1</strong><span>词汇、语法、文化与例句</span></div>
+        <div><strong>本地优先</strong><span>进度、收藏与音频保存在设备</span></div>
+      </div>
     </section>
 
-    <!-- Demo Section -->
-    <section id="demo" class="demo">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">体验樱语</h2>
-                <p class="section-description">
-                    感受优雅的学习界面设计和流畅的交互体验
-                </p>
-            </div>
-            
-            <div class="demo-container">
-                <div class="demo-phone">
-                    <div class="phone-frame">
-                        <div class="phone-screen">
-                            <div class="demo-content">
-                                <!-- Demo Learning Card -->
-                                <div class="demo-card glassmorphic">
-                                    <div class="card-header">
-                                        <div class="jlpt-badge">N5</div>
-                                        <div class="card-type">词汇</div>
-                                    </div>
-                                    <div class="card-main">
-                                        <div class="japanese-text">桜</div>
-                                        <div class="reading-text">さくら</div>
-                                        <div class="meaning-text">樱花</div>
-                                    </div>
-                                    <div class="card-example">
-                                        <div class="example-icon">
-                                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                            </svg>
-                                        </div>
-                                        <div class="example-text">春天的樱花很美丽。</div>
-                                    </div>
-                                    <div class="card-actions">
-                                        <button class="action-btn favorite">
-                                            <span class="btn-icon">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.5783 8.50903 2.9987 7.05 2.9987C5.59096 2.9987 4.19169 3.5783 3.16 4.61C2.1283 5.6417 1.5487 7.04097 1.5487 8.5C1.5487 9.95903 2.1283 11.3583 3.16 12.39L12 21.23L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6053C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.06211 22.0329 6.39467C21.7563 5.72723 21.351 5.1208 20.84 4.61V4.61Z" fill="currentColor"/>
-                                                </svg>
-                                            </span>
-                                        </button>
-                                        <button class="action-btn ai">
-                                            <span class="btn-icon">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                                                </svg>
-                                            </span>
-                                            <span class="btn-text">AI扩展</span>
-                                        </button>
-                                        <button class="action-btn share">
-                                            <span class="btn-icon">
-                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M18 16.08C17.24 16.08 16.56 16.38 16.04 16.85L8.91 12.7C8.96 12.47 9 12.24 9 12S8.96 11.53 8.91 11.3L15.96 7.19C16.5 7.69 17.21 8 18 8C19.66 8 21 6.66 21 5S19.66 2 18 2 15 3.34 15 5C15 5.24 15.04 5.47 15.09 5.7L8.04 9.81C7.5 9.31 6.79 9 6 9C4.34 9 3 10.34 3 12S4.34 15 6 15C6.79 15 7.5 14.69 8.04 14.19L15.16 18.34C15.11 18.55 15.08 18.77 15.08 19C15.08 20.61 16.39 21.92 18 21.92S20.92 20.61 20.92 19C20.92 17.39 19.61 16.08 18 16.08Z" fill="currentColor"/>
-                                                </svg>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                                
-                                <!-- Demo Navigation -->
-                                <div class="demo-nav">
-                                    <div class="nav-hint">滑动操作 · 智能学习</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="demo-features">
-                    <div class="demo-feature">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h4>智能随机</h4>
-                        <p>智能算法确保学习内容多样性和连贯性</p>
-                    </div>
-                    <div class="demo-feature">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.813 15.904L9 18.75L10.813 17.438L12.75 18.75L10.875 15.904M12.75 12L10.875 9.154L12.75 6.75L10.813 8.063L9 6.75L9.813 9.154M15 12C15 13.657 13.657 15 12 15C10.343 15 9 13.657 9 12C9 10.343 10.343 9 12 9C13.657 9 15 10.343 15 12Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h4>AI智能</h4>
-                        <p>实时生成学习内容和个性化解释</p>
-                    </div>
-                    <div class="demo-feature">
-                        <div class="feature-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h4>优雅设计</h4>
-                        <p>玻璃态效果让学习变得赏心悦目</p>
-                    </div>
-                </div>
-            </div>
+    <section class="section" id="workspace">
+      <div class="shell">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow">Learner Workspace</p>
+            <h2>每个页面，都对应一个清楚的学习任务。</h2>
+          </div>
+          <p>不把所有功能挤在一张卡片里。樱语把今天要做的事分成四个可以随时回到的空间。</p>
         </div>
+        <div class="workspace-grid">
+          <a class="workspace-card" href="discovery.html">
+            <div class="workspace-copy">
+              <span class="card-index">01</span>
+              <p class="kicker">今日学习</p>
+              <h3>发现</h3>
+              <p>从推荐路径、搜索和学习卡片开始，听发音、看例句、掌握或加入复习。</p>
+              <span class="text-link">查看发现页</span>
+            </div>
+            <img src="assets/app-screens/discovery.webp" width="720" height="1562" alt="樱语发现页的今日学习与推荐路径界面">
+          </a>
+          <a class="workspace-card" href="shadowing.html">
+            <div class="workspace-copy">
+              <span class="card-index">02</span>
+              <p class="kicker">Listening Practice</p>
+              <h3>影子跟读</h3>
+              <p>导入自己的 ZIP 或音频教材，按片段先听、跟读、回放并标记复习。</p>
+              <span class="text-link">查看跟读页</span>
+            </div>
+            <img src="assets/app-screens/shadowing.webp" width="720" height="1562" alt="樱语影子跟读页，支持选择文件和输入链接导入音频">
+          </a>
+          <a class="workspace-card" href="favorites.html">
+            <div class="workspace-copy">
+              <span class="card-index">03</span>
+              <p class="kicker">Knowledge Shelf</p>
+              <h3>知识架</h3>
+              <p>把值得回看的词汇、语法与文化内容收藏起来，再搜索、筛选和复习。</p>
+              <span class="text-link">查看知识架</span>
+            </div>
+            <img src="assets/app-screens/favorites.webp" width="720" height="1562" alt="樱语知识架的空状态，说明发现、收藏和复习流程">
+          </a>
+          <a class="workspace-card" href="progress.html">
+            <div class="workspace-copy">
+              <span class="card-index">04</span>
+              <p class="kicker">Progress & Settings</p>
+              <h3>我的</h3>
+              <p>查看历史与统计，调整目标、范围、内容、假名、语音和 AI 偏好。</p>
+              <span class="text-link">查看进度页</span>
+            </div>
+            <img src="assets/app-screens/profile.webp" width="720" height="1562" alt="樱语我的页面，包含进度统计和学习设置">
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <div class="container">
-            <div class="experience-grid">
-                <div class="experience-card glassmorphic">
-                    <div class="experience-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>发现学习</h3>
-                    <p>通过优雅的卡片界面，每次学习都是一次美好的发现之旅。智能推荐让你总能遇到合适的内容。</p>
-                </div>
-                
-                <div class="experience-card glassmorphic">
-                    <div class="experience-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>个性化</h3>
-                    <p>丰富的头像系统和个性化设置，打造专属于你的学习空间。分享学习成果，与朋友一起进步。</p>
-                </div>
-                
-                <div class="experience-card glassmorphic">
-                    <div class="experience-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4 19.5C4 18.837 4.263 18.201 4.732 17.732C5.201 17.263 5.837 17 6.5 17H20V4C20 3.46957 19.7893 2.96086 19.4142 2.58579C19.0391 2.21071 18.5304 2 18 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V19.5ZM4 19.5V21C4 21.2652 4.10536 21.5196 4.29289 21.7071C4.48043 21.8946 4.73478 22 5 22H18.5C19.163 22 19.799 21.737 20.268 21.268C20.737 20.799 21 20.163 21 19.5C21 18.837 20.737 18.201 20.268 17.732C19.799 17.263 19.163 17 18.5 17H4V19.5Z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3>深度学习</h3>
-                    <p>不仅仅是词汇记忆，更有文化背景和语法扩展。AI助手帮你深入理解每个知识点。</p>
-                </div>
-            </div>
+    <section class="section soft-section">
+      <div class="shell learning-grid">
+        <div class="section-heading sticky-heading">
+          <p class="eyebrow">A calm learning loop</p>
+          <h2>不是连续打卡的压力，而是一个能回来的循环。</h2>
+          <p>内容、听力、收藏和复习使用同一套学习记录，给下一步一个更自然的起点。</p>
         </div>
+        <ol class="learning-steps">
+          <li><span>01</span><div><h3>发现适合今天的内容</h3><p>推荐路径会结合学习范围与进度，搜索覆盖日语标题、假名与中文释义。</p></div></li>
+          <li><span>02</span><div><h3>先听，再读，再跟</h3><p>卡片内可直接听发音；教材音频则进入独立的影子跟读空间。</p></div></li>
+          <li><span>03</span><div><h3>收藏真正想留下的知识</h3><p>知识架支持搜索、筛选，以及 JSON 导入与导出。</p></div></li>
+          <li><span>04</span><div><h3>按记忆节奏复习</h3><p>掌握选择会进入间隔复习，并在学习历史与统计中留下真实记录。</p></div></li>
+        </ol>
+      </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="download">
-        <div class="container">
-            <div class="download-content">
-                <div class="download-text">
-                    <h2 class="download-title">开始你的日语学习之旅</h2>
-                    <p class="download-description">
-                        樱语已正式上架App Store，为你带来最优雅的日语学习体验。
-                        <br>现在就开始你的日语学习之旅吧。
-                    </p>
-                    <div class="download-features">
-                        <div class="download-feature">
-                            <span class="feature-check">✓</span>
-                            <span>优雅的设计语言</span>
-                        </div>
-                        <div class="download-feature">
-                            <span class="feature-check">✓</span>
-                            <span>智能AI助手</span>
-                        </div>
-                        <div class="download-feature">
-                            <span class="feature-check">✓</span>
-                            <span>个性化学习体验</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="download-visual">
-                    <div class="download-card glassmorphic">
-                        <div class="app-icon">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <h3>立即下载</h3>
-                        <p>在App Store免费下载樱语，开始学习日语</p>
-                        <div class="download-buttons">
-                            <a href="https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407" class="app-store-btn" target="_blank">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 17 2.94 12.45 4.7 9.39C5.57 7.87 7.13 6.91 8.82 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z" fill="currentColor"/>
-                                </svg>
-                                <span>App Store下载</span>
-                            </a>
-                            <div class="qr-code-section">
-                                <div class="qr-placeholder">
-                                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <rect x="3" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                                        <rect x="14" y="3" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                                        <rect x="3" y="14" width="7" height="7" stroke="currentColor" stroke-width="1.5"/>
-                                        <rect x="5" y="5" width="3" height="3" fill="currentColor"/>
-                                        <rect x="16" y="5" width="3" height="3" fill="currentColor"/>
-                                        <rect x="5" y="16" width="3" height="3" fill="currentColor"/>
-                                        <rect x="14" y="14" width="2" height="2" fill="currentColor"/>
-                                        <rect x="17" y="14" width="2" height="2" fill="currentColor"/>
-                                        <rect x="14" y="17" width="2" height="2" fill="currentColor"/>
-                                        <rect x="19" y="17" width="2" height="2" fill="currentColor"/>
-                                    </svg>
-                                </div>
-                                <p class="qr-text">扫码下载</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="section">
+      <div class="shell advanced-grid">
+        <div class="advanced-copy">
+          <p class="eyebrow">Grammar, connected</p>
+          <h2>语法不再是孤立条目。</h2>
+          <p>语法详情可以展示已审核的关联语法，并提供只读句子分析：把句子中的已知学习点连回现有内容，帮助理解差异与搭配。</p>
+          <ul class="plain-list">
+            <li>关联语法与对比提示</li>
+            <li>可编辑句子的只读分析</li>
+            <li>不会自动写入收藏或复习队列</li>
+          </ul>
+          <a class="button secondary" href="grammar.html">了解语法解析</a>
         </div>
+        <div class="analysis-card" aria-label="句子分析示例">
+          <p class="analysis-label">句子分析 · Read only</p>
+          <p class="jp-sentence" lang="ja">ここで写真を撮らないでください。</p>
+          <p>请不要在这里拍照。</p>
+          <div class="relation-row">
+            <span>～ないでください</span>
+            <span>请求 · 禁止表达</span>
+          </div>
+          <div class="relation-row">
+            <span>写真</span>
+            <span>已存在学习点</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="brand-logo">
-                        <span class="logo-icon">🌸</span>
-                        <span class="logo-text">樱语</span>
-                    </div>
-                    <p class="brand-tagline">AI驱动的现代日语学习</p>
-                </div>
-                
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4 class="link-title">应用</h4>
-                        <a href="#features" class="footer-link">功能特色</a>
-                        <a href="#screenshots" class="footer-link">应用预览</a>
-                        <a href="#download" class="footer-link">下载</a>
-                    </div>
-                    <div class="link-group">
-                        <h4 class="link-title">支持</h4>
-                        <a href="/support.html" class="footer-link">帮助中心</a>
-                        <a href="/privacy.html" class="footer-link">隐私政策</a>
-                        <a href="/terms.html" class="footer-link">使用条款</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p class="copyright">© 2025 樱语. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
+    <section class="section local-section">
+      <div class="shell local-card">
+        <div>
+          <p class="eyebrow">Local first</p>
+          <h2>教材、录音和学习记录，优先留在你的设备里。</h2>
         </div>
-    </footer>
+        <p>影子跟读音频、录音、收藏和学习进度以本地体验为核心。在线 AI 是可选项；内置解释与本地学习功能不要求你建立云端账户。</p>
+        <a class="text-link" href="privacy.html">阅读隐私政策</a>
+      </div>
+    </section>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
-    
-    <!-- Analytics (replace with your tracking ID) -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script> -->
+    <section class="section final-cta" id="download">
+      <div class="shell final-cta-card">
+        <p class="eyebrow">Start gently</p>
+        <h2>今天先学一张卡片。</h2>
+        <p>从中文语境出发，把日语慢慢变成可以理解、可以说出口的东西。</p>
+        <a class="button primary" href="https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407">前往 App Store</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true">桜</span><span><strong>樱语</strong><small>Sakura JP</small></span></a>
+        <p>给中文母语者的日语学习工作台。</p>
+      </div>
+      <div><h2>学习空间</h2><a href="discovery.html">发现</a><a href="shadowing.html">影子跟读</a><a href="favorites.html">知识架</a><a href="progress.html">我的</a></div>
+      <div><h2>了解更多</h2><a href="grammar.html">语法解析</a><a href="support.html">帮助与支持</a><a href="privacy.html">隐私政策</a><a href="terms.html">服务条款</a></div>
+      <div><h2>获取应用</h2><a href="https://apps.apple.com/cn/app/%E6%A8%B1%E8%AF%AD/id6749544407">App Store</a><span>当前官网对应 2.1.2 (184)</span></div>
+    </div>
+    <div class="shell footer-bottom"><span>© 2026 樱语 Sakura JP</span><span>书道之美，语言之心。</span></div>
+  </footer>
 </body>
 </html>
