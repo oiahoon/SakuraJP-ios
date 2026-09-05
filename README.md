@@ -11,14 +11,19 @@ for Chinese-speaking learners.
 
 ## Current product baseline
 
-The July 2026 website refresh is aligned to Sakura JP `2.1.2 (184)` and uses
-fresh simulator captures from the shipping app design:
+The September 2026 refresh describes source baseline `2.1.17 (199)`. Five
+major screenshots were freshly captured from that installed Simulator build;
+three unchanged sheets reuse same-day accepted 2.1.16 evidence. Per the user's direction, public pages present the latest 2.1.17 baseline.
+Dated Store-state evidence stays in the parent development handoff.
+
+Current capabilities:
 
 - Discovery / Today Study
 - Shadowing / Listening Practice
 - Favorites / Knowledge Shelf
 - Profile / Progress & Settings
-- Reviewed grammar relations and read-only sentence analysis
+- Local-first 句解 with reviewed grammar patterns and optional validated online enhancement
+- Card-level practice, shared preview/export rendering, voice settings and Favorites transfer
 - Support, privacy, and terms pages aligned to current local-first behavior
 
 ## Site structure
@@ -34,3 +39,19 @@ fresh simulator captures from the shipping app design:
 
 The site is intentionally static HTML, CSS, and minimal JavaScript for fast,
 durable GitHub Pages hosting.
+
+## Validation and deployment
+
+```bash
+python3 check_site.py
+python3 -m http.server 4173 --bind 127.0.0.1
+```
+
+Check all nine routes on desktop and mobile; exercise the menu, Escape focus,
+FAQ disclosure, workspace anchor and App Store links. Current SHA and live
+validation are recorded in `design-qa.md` and the parent project's handoff.
+
+The workflow validates links/assets/metadata, stages only public HTML/CSS/JS,
+CNAME, robots/sitemap and assets, then deploys main pushes to Pages. Pull requests
+validate without production deployment. This is the sole production workflow;
+the parent app repository only checks its pinned submodule snapshot.

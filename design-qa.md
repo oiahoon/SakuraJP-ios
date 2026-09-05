@@ -1,52 +1,41 @@
-# Sakura JP Website Design QA
+# Website QA - 2026-09-05
 
-final result: passed
+Source baseline: Sakura JP 2.1.17 (199); website parent application commit 0a7058c.
 
-## Source truth
+## Changes
 
-- Current shipped app: Sakura JP `2.1.2 (184)` from the installed iPhone 17 Pro simulator build.
-- App screenshots captured from that build:
-  - `assets/app-screens/discovery.webp`
-  - `assets/app-screens/shadowing.webp`
-  - `assets/app-screens/favorites.webp`
-  - `assets/app-screens/profile.webp`
-- App brand assets:
-  - `assets/favicon.png`
-  - `assets/apple-touch-icon.png`
-- Generated hero artwork:
-  - `assets/sakura-ink-wash-hero.webp`
-  - Art direction: warm washi paper, restrained Sakura pink wash, charcoal brush stroke, sparse petals, no embedded text or logos.
+Latest four-tab app screenshots, real 句解 in place of the old HTML mockup,
+practice/share/voice gallery, current Discovery gestures, local audio and AI
+boundaries, Favorites migration, current app icon and dated source attribution.
+Paper/ink headings and restrained surfaces preserve the app's reading direction.
 
-## Implementation evidence
+## Local validation
 
-- Desktop home hero, 1280 × 720: `.qa/home-desktop-final.png`
-- Desktop learning-space section, 1280 × 720: `.qa/home-workspace-desktop.png`
-- Mobile home hero, 390 × 844: `.qa/home-mobile.png`
-- Mobile Shadowing page, 390 × 844: `.qa/shadowing-mobile.png`
-- Full comparison input: `.qa/full-comparison.png`
-- Focused app-to-site comparison input: `.qa/focused-comparison.png`
+- `python3 check_site.py`: all 9 pages, local links, anchors, image dimensions/alt,
+  CSS assets, canonical domain and required metadata pass.
+- Playwright Chromium: 9 pages at 1440, 768, 390 and 320px (36 page/viewport checks)
+  pass page identity, meaningful main content, one h1, image loading and no
+  horizontal overflow. No page exceptions, console errors or local HTTP errors.
+- Interactions pass: mobile menu -> grammar; Escape closes and returns focus;
+  audio import FAQ opens; workspace anchor updates URL; App Store links use
+  app ID 6749544407; reduced motion disables smooth scrolling.
+- Browser plugin skill was not available; existing Playwright used without new
+  dependencies. Evidence lives in the parent ignored output directory.
+- Full-page and first-viewport desktop/mobile screenshots visually reviewed.
+- An initial QA URL assertion expected `/#workspace` after navigating to
+  `index.html`; corrected the harness to check the URL hash. No site workaround.
 
-## Visual comparison
+## Deployment contract
 
-The full comparison places the generated hero art, current app Profile screen, desktop home implementation, and mobile home implementation in one image. The focused comparison places current Profile and Shadowing screens beside their website implementations.
+This repository owns Pages production. PRs validate only. Main deployments
+first validate, then publish an allowlist of website assets. The parent repository
+validates its pinned submodule instead of publishing a second website.
 
-- Typography: passed. The website uses the same compact, high-contrast system-type feel as the native app, with readable CJK line breaks and no clipped labels.
-- Color and material: passed. Sakura pink, warm white, black ink, fine borders, and restrained translucent surfaces stay consistent with the current app.
-- Image fidelity: passed. Device screens use exact simulator captures rather than recreated UI, placeholder boxes, or code drawings.
-- Hierarchy: passed. Product promise, App Store CTA, and the four learning workspaces are clear at desktop and mobile sizes.
-- Spacing and cropping: passed. Hero art fills its intended field; device screenshots retain their native aspect ratio and remain legible without stretching.
-- Responsive layout: passed. Browser checks at 1280 × 720 and 390 × 844 found no horizontal overflow.
+The user requested latest-version messaging even while Store publication catches
+up. Pages describe the 2.1.17 implementation; they do not claim review approval.
+Post-deployment checks are recorded in the parent project handoff.
 
-## Interaction and content checks
+## Limits
 
-- Header navigation, feature-page links, App Store links, mobile menu, and Support FAQ disclosures work.
-- All nine HTML pages and every local image, stylesheet, script, icon, and document link resolve.
-- Support, Privacy, and Terms now describe the current local-first app, optional online AI behavior, user-owned Shadowing audio, microphone use, and export flow without the previous account or subscription claims.
-- Browser console: zero warnings and zero errors on the tested home, Shadowing, and Support states.
-
-## Comparison history
-
-1. Initial browser capture exposed a P1 layout defect: intrinsic HTML image dimensions were overriding responsive widths and producing oversized device images and excessive page height.
-2. Added a global responsive image height rule, then re-captured desktop and mobile views.
-3. Tightened the desktop hero height, headline scale, and device width so the full primary CTA path fits above the fold.
-4. Rechecked the combined full and focused comparison inputs. No P0, P1, or P2 visual issues remain.
+Rendered website checks do not rerun the iOS test suite, prove physical-device
+microphone behavior, or verify delivery of the existing support mailbox.

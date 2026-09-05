@@ -1,0 +1,50 @@
+[
+  {
+    "file": "discovery.webp",
+    "source": "output/website-refresh-2026-09-05/discovery.png",
+    "sourceVersion": "2.1.17 (199)",
+    "sha256": "59872ff1b0b92272953fb610f65be6e77f8427ef3bb35a7ecc6e7e97bbbb4448"
+  },
+  {
+    "file": "profile.webp",
+    "source": "output/website-refresh-2026-09-05/profile.png",
+    "sourceVersion": "2.1.17 (199)",
+    "sha256": "f5c344307171a4f7fa4ec7fc35430ae16c798784883e9dd53a2903f6a3cde0b4"
+  },
+  {
+    "file": "favorites.webp",
+    "source": "output/website-refresh-2026-09-05/favorites.png",
+    "sourceVersion": "2.1.17 (199)",
+    "sha256": "f63559cc9e9b13c405a03bb285f7c27f431d105ca3f0c4f51c7cce6f4ca9a70b"
+  },
+  {
+    "file": "shadowing.webp",
+    "source": "output/website-refresh-2026-09-05/shadowing.png",
+    "sourceVersion": "2.1.17 (199)",
+    "sha256": "ea3db7beb11398e192340c8fa73e8b29504ad5afb40cf63ebf0e0f817cf7ec7c"
+  },
+  {
+    "file": "sentence.webp",
+    "source": "output/website-refresh-2026-09-05/sentence.png",
+    "sourceVersion": "2.1.17 (199)",
+    "sha256": "92c04d491bc10b6f06dcfa7d4a78790b17ee6d4d01c9d229c32e55e884ab3b16"
+  },
+  {
+    "file": "practice.webp",
+    "source": "output/uiux-five-round-2.1.16-2026-09-05/01-practice-after.jpg",
+    "sourceVersion": "2.1.16 (198), unchanged surface in 2.1.17",
+    "sha256": "baeb2b314953087fb07d4e6fa0b21ecef42eff8f21b965adc54fc03e3937c288"
+  },
+  {
+    "file": "share.webp",
+    "source": "output/uiux-five-round-2.1.16-2026-09-05/02-share-after.jpg",
+    "sourceVersion": "2.1.16 (198), unchanged surface in 2.1.17",
+    "sha256": "dacd4a72434ac88e599f66ff27703c7b4a98c0e58255ec1c38a33953f2a586dc"
+  },
+  {
+    "file": "voice.webp",
+    "source": "output/uiux-five-round-2.1.16-2026-09-05/04-voice-after.jpg",
+    "sourceVersion": "2.1.16 (198), unchanged surface in 2.1.17",
+    "sha256": "7222a65986b8e7ee64608c7fb7828be41f79cf7dc6c996ce9e273b4b36088f38"
+  }
+]

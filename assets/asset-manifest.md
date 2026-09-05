@@ -1,6 +1,6 @@
 # Sakura JP Website Asset Manifest
 
-Published assets for the July 2026 website refresh.
+Published assets, refreshed 2026-09-05. The original ink-wash background is retained; current application evidence is listed below.
 
 ## Brand background
 
@@ -12,16 +12,21 @@ Published assets for the July 2026 website refresh.
   logo.
 - Export: WebP quality 82 from the preserved PNG source.
 
-## App screenshots
+## App screenshots · 2026-09-05
 
-- Files: `app-screens/discovery.webp`, `shadowing.webp`, `favorites.webp`,
-  `profile.webp`.
-- Source: Sakura JP 2.1.2 (184), iPhone 17 Pro Simulator, captured 2026-07-16.
-- Export: 720px wide WebP quality 84.
-- These are product evidence, not concept mockups.
+- Current published directory: `app-screens/2.1.17/`.
+- Fresh discovery, sentence, shadowing, favorites and profile captures:
+  installed Sakura JP 2.1.17 (199), dedicated iPhone 17 Pro, iOS 26.5 Simulator.
+- Practice/share/voice: same-day accepted 2.1.16 (198) captures; those surfaces
+  are unchanged in 2.1.17. No concept mockup is used as app evidence.
+- Five fresh captures: 720px WebP quality 88. Three retained sheets: original
+  368px width, WebP quality 88. Only scaling/compression, no UI fabrication.
+- Exact parent source paths, baseline and output SHA-256: `app-screens/2.1.17/manifest.json`.
+- Earlier unversioned images document the previous website only and are no
+  longer referenced by current pages. No test textbook audio is redistributed.
 
 ## Application icons
 
 - Files: `favicon.png`, `apple-touch-icon.png`.
-- Source: the shipping Sakura JP app icon set in the iOS repository.
+- Source: current 2.1.17 app icon set in the iOS repository, re-exported 2026-09-05.
 - Exports: 80px favicon source and 180px Apple touch icon source.

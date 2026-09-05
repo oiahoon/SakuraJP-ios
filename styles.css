@@ -416,3 +416,33 @@ h3 { margin-bottom: 12px; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.18
   html { scroll-behavior: auto; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
+
+/* September 2026: align the website to the app's paper-and-ink reading hierarchy. */
+:root { --paper: #fcfaf7; --surface-soft: #faf5f4; --surface-strong: #f7eded; --sakura-deep: #a94c65; --soft-muted: #756d70; }
+html { scroll-padding-top: 100px; }
+h1, h2 { font-family: "Songti SC", "Hiragino Mincho ProN", "Yu Mincho", serif; letter-spacing: -.025em; line-height: 1.25; }
+.home-hero { min-height: 720px; padding-block: 48px; }
+.hero-shot { transform: none; }
+.hero-shot img { width: min(290px, 100%); }
+.app-shot img { aspect-ratio: auto; object-fit: contain; }
+.hero-art { opacity: .26; }
+.workspace-card { border-radius: 12px; box-shadow: none; }
+.workspace-card:hover { box-shadow: var(--shadow-sm); }
+.workspace-card img { align-self: center; border-radius: 20px 0 0 20px; }
+.screen-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px; }
+.screen-gallery figure { margin: 0; min-width: 0; }
+.screen-gallery img { width: 100%; max-width: 300px; margin-inline: auto; border-radius: 26px; border: 1px solid var(--line); }
+.screen-gallery figcaption { margin-top: 22px; text-align: center; }
+.screen-gallery strong, .screen-gallery span { display: block; }
+.screen-gallery span { margin-top: 8px; color: var(--muted); font-size: 14px; }
+@media (max-width: 680px) {
+  .home-hero { padding-block: 44px; }
+  .home-hero h1 { font-size: clamp(38px, 11vw, 56px); }
+  .screen-gallery { grid-template-columns: 1fr; gap: 48px; }
+  .workspace-card { min-height: 0; grid-template-columns: minmax(0,1fr) minmax(100px,38%); gap: 12px; }
+  .workspace-card img { width: 100%; }
+  .workspace-copy { padding: 24px 0 24px 20px; }
+  .workspace-copy h3 { font-size: 24px; }
+  .workspace-copy p { font-size: 14px; }
+  .card-index { margin-bottom: 20px; }
+}
