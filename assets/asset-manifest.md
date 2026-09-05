@@ -30,3 +30,11 @@ Published assets, refreshed 2026-09-05. The original ink-wash background is reta
 - Files: `favicon.png`, `apple-touch-icon.png`.
 - Source: current 2.1.17 app icon set in the iOS repository, re-exported 2026-09-05.
 - Exports: 80px favicon source and 180px Apple touch icon source.
+
+## Interactive Hero · 2026-09-05
+
+- `demo/content.json`: three source learning points/examples, no user data.
+- `demo/washi-dawn.webp`: optimized existing app dawn illustration.
+- The HTML preview is labeled separately from real screenshots. Its phrase
+  annotations are a fixed guided sample, not a hosted sentence-analysis engine.
+- Full source IDs and behavior boundaries: [demo notes](demo/README.md).

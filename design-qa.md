@@ -39,3 +39,23 @@ Post-deployment checks are recorded in the parent project handoff.
 
 Rendered website checks do not rerun the iOS test suite, prove physical-device
 microphone behavior, or verify delivery of the existing support mailbox.
+
+## Interactive Hero follow-up · 2026-09-05
+
+- Three source examples support card tap, detail, curated 句解, phrase selection,
+  left/next, right/save, Favorites open/remove and real-screenshot mode.
+- Finite spring-like easing replaces abrupt transitions. Scrolling remains native;
+  Reduced Motion, cancellation, backgrounding and offscreen cleanup are explicit.
+- Local Chromium and WebKit pass the Hero regression at 1440/768/390/320px,
+  including pointer gestures, keyboard alternatives, mode/state preservation,
+  missing Japanese voice, reduced motion, data failure and no-JS fallback.
+- Chromium mobile touch events pass swipe/save, cancelled gesture, vertical page
+  scroll, mode switching during transition and no active animations at idle.
+- All 36 page/viewport checks and six existing navigation checks pass again,
+  without console/page/HTTP errors. Desktop/mobile and sentence states reviewed.
+- Repeatable scripts: `tests/hero-demo.cjs` and `tests/hero-touch.cjs`. WebKit's
+  missing-voice test replaces the window property rather than assigning to its
+  native method; this is a test-harness compatibility detail, not product logic.
+- Evidence: parent `output/website-hero-demo-2026-09-05/`. Voice fallback and
+  browser interactions were checked; this does not certify audible pronunciation
+  on every visitor's system or physical iPhone Safari behavior.

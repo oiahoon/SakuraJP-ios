@@ -446,3 +446,76 @@ h1, h2 { font-family: "Songti SC", "Hiragino Mincho ProN", "Yu Mincho", serif; l
   .workspace-copy p { font-size: 14px; }
   .card-index { margin-bottom: 20px; }
 }
+
+/* Motion stays finite and responds to the system preference. No scroll hijacking. */
+.button, .workspace-card { transition-timing-function: cubic-bezier(.22,1,.36,1); transition-duration: 280ms; }
+.button:active { transform: translateY(0) scale(.98); }
+@media (hover: hover) { .workspace-card:hover { transform: translateY(-3px); } }
+[hidden] { display: none !important; }
+.hero-experience { margin: 0; width: min(310px,100%); justify-self: center; position: relative; }
+.demo-switch { display: flex; justify-content: center; gap: 4px; margin: 0 auto 16px; padding: 4px; border: 1px solid var(--line); border-radius: 40px; background: #ffffffa8; width: fit-content; }
+.demo-switch button { border: 0; border-radius: 40px; padding: 8px 17px; background: transparent; color: var(--muted); cursor: pointer; font-size: 12px; min-height: 36px; }
+.demo-switch button[aria-pressed="true"] { background: #fff; color: var(--ink); box-shadow: 0 2px 8px #38272b0c; }
+.demo-device { position: relative; width: 100%; aspect-ratio: 720/1565; border-radius: 42px; border: 1px solid #e7e1e0; background: #fff; box-shadow: 0 28px 70px #5841491c; overflow: clip; isolation: isolate; }
+.demo-real-shot { width: 100%; height: 100%; object-fit: contain; }
+.demo-ui { height: 100%; display: flex; flex-direction: column; color: #252122; background: #fff; font-size: 13px; line-height: 1.6; }
+.demo-ui button, .demo-ui a { -webkit-tap-highlight-color: transparent; }
+.demo-ui button { font: inherit; cursor: pointer; color: inherit; }
+.demo-statusbar { height: 49px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 27px; font: 600 12px -apple-system,BlinkMacSystemFont,sans-serif; }
+.demo-island { width: 98px; height: 27px; border-radius: 30px; background: #050505; }
+.demo-screen { flex: 1; min-height: 0; overflow-y: auto; overflow-x: clip; padding: 10px 20px 18px; scrollbar-width: thin; background-image: linear-gradient(to bottom,#fff,#ffffffcf 45%,#ffffffb3), url('assets/demo/washi-dawn.webp'); background-position: center bottom; background-size: 100% 180px, 100% auto; background-repeat: no-repeat; overscroll-behavior-y: auto; }
+.demo-screen:has(.demo-segments), .demo-screen:has(.demo-saved-list), .demo-screen:has(.demo-detail-word) { background-image: none; }
+.demo-topline { display: flex; align-items: center; justify-content: space-between; gap: 6px; color: #756b70; font-size: 11px; min-height: 38px; margin-bottom: 20px; }
+.demo-topline button:not(.demo-round) { border: 0; background: none; min-height: 44px; padding: 0 6px; color: #a94c65; }
+.demo-topline h3 { margin: 0; font-size: 17px; color: #c65c7b; }
+.demo-card-stage { position: relative; }
+.demo-card { display: block; position: relative; width: 100%; text-align: left; border: 0; border-left: 1px solid #efd0d8; padding: 0 0 6px 14px; background: #ffffffd9; touch-action: pan-y; user-select: none; -webkit-user-select: none; transform-origin: center 75%; }
+.demo-word { display: block; font: 500 clamp(24px,4vw,32px)/1.5 "Hiragino Mincho ProN","Yu Mincho",serif; margin: 8px 0 20px; color: #171314; letter-spacing: -.04em; }
+.demo-label { display: block; color: #81747b; font-size: 10px; margin: 16px 0 4px; }
+.demo-meaning { display: block; font-size: 13px; line-height: 1.7; }
+.demo-example { display: block; font: 500 17px/1.65 "Hiragino Mincho ProN","Yu Mincho",serif; }
+.demo-translation { display: block; color: #b45973; margin-top: 5px; }
+.demo-card-hint { display: block; font-size: 10px; color: #8b757d; margin: 20px 0 0; }
+.demo-swipe-mark { position: absolute; inset: 0; display: grid; place-items: center; font: 130px "Songti SC",serif; color: #c77b91; pointer-events: none; }
+.demo-actions { display: flex; justify-content: center; align-items: center; gap: 22px; margin-top: 24px; }
+.demo-round { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; border: 0; border-radius: 50%; background: #faf2f5; color: #af526d !important; flex-shrink: 0; }
+.demo-round[aria-pressed="true"] { background: #efd0da; }
+.demo-save { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; border: 0; border-radius: 24px; background: #faf2f5; padding: 8px 15px; color: #a94c65 !important; }
+.demo-tabs { flex-shrink: 0; display: grid; grid-template-columns: repeat(4,1fr); margin: 8px 10px 14px; padding: 4px; border: 1px solid #f4f1f1; border-radius: 40px; box-shadow: 0 2px 22px #45323e09; background: #ffffffed; }
+.demo-tabs > * { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 48px; border: 0; border-radius: 40px; color: #544d51; background: transparent; text-decoration: none; font-size: 9px !important; gap: 1px; }
+.demo-tabs > [aria-current] { color: #b44d6c; background: #f0edef; }
+.demo-tabs span { display: flex; align-items: center; height: 25px; }
+.hero-experience figcaption { margin-top: 14px; text-align: center; font-size: 12px; color: #71646a; }
+.demo-feedback { display: block; min-height: 36px; font-size: 11px; margin-top: 6px; color: #8a6773; }
+.demo-page-title { font-size: 20px; margin: 18px 0 8px; }
+.demo-page-title small { color: #ae8794; font: 12px sans-serif; }
+.demo-small { color: #84777e; font-size: 11px; }
+.demo-empty { text-align: center; margin-top: 78px; color: #a87486; }
+.demo-empty > svg { width: 36px; height: 36px; }
+.demo-saved-row { display: flex; align-items: center; gap: 6px; padding: 16px 0; border-bottom: 1px solid #f0e8eb; }
+.demo-saved-row > button:first-child { min-width: 0; flex: 1; text-align: left; border: 0; background: transparent; padding: 5px 0; }
+.demo-saved-row span, .demo-saved-row small { display: block; }
+.demo-saved-row span { font: 19px/1.5 "Hiragino Mincho ProN",serif; }
+.demo-saved-row small { color: #967985; margin-top: 8px; }
+.demo-remove { min-width: 44px; min-height: 44px; background: transparent; border: 0; color: #a26d80 !important; font-size: 22px !important; }
+.demo-detail-word { font: 25px/1.6 "Hiragino Mincho ProN",serif; margin: 0 0 20px; }
+.demo-detail-example { border-top: 1px solid #f3e8ec; margin-top: 22px; padding-top: 16px; }
+.demo-detail-example > p:first-child, .demo-sentence { font: 19px/1.7 "Hiragino Mincho ProN",serif; margin-bottom: 8px; }
+.demo-primary { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; margin-top: 15px; border: 0; border-radius: 24px; background: #f8e7ee; color: #a74e69 !important; }
+.demo-segments { margin: 22px 0 18px; border-top: 1px solid #f1e7eb; padding-top: 10px; }
+.demo-segments button { display: flex; justify-content: space-between; align-items: center; gap: 8px; width: 100%; text-align: left; background: none; border: 0; border-left: 1px solid #f2e2e8; min-height: 62px; padding: 10px 8px; margin: 8px 0; }
+.demo-segments button[aria-pressed="true"] { border-left: 2px solid #c76484; background: #fdf7f9; }
+.demo-segments ruby { font: 16px/1.6 "Hiragino Mincho ProN",serif; }
+.demo-segments rt { color: #c37c94; font-size: 9px; }
+.demo-segments button > span { flex-shrink: 0; font-size: 9px; color: #947781; }
+.demo-formula { text-align: center; color: #b3607b; font: 17px/1.8 "Hiragino Mincho ProN",serif; padding: 12px 0; border-top: 1px solid #ebcbd6; margin-top: 20px; }
+.demo-explanation { font-size: 12px; color: #76616a; }
+.demo-more { display: block; color: #a74e69; font-size: 11px; margin: 18px 0 0; min-height: 44px; padding-block: 12px; text-decoration: none; }
+@media (max-width: 680px) {
+  .hero-experience { width: min(310px,100%); }
+  .demo-device { border-radius: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button:active, .workspace-card:hover { transform: none; }
+  .demo-card { transform: none !important; }
+}

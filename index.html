@@ -15,8 +15,9 @@
   <link rel="canonical" href="https://sakura.miaowu.org/">
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="styles.css?v=20260905">
-  <script defer src="script.js?v=20260905"></script>
+  <link rel="stylesheet" href="styles.css?v=20260905-demo1">
+  <script defer src="script.js?v=20260905-demo1"></script>
+  <script defer src="hero-demo.js?v=20260905-demo1"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -74,9 +75,28 @@
             <li>可选 AI 辅助</li>
           </ul>
         </div>
-        <figure class="app-shot hero-shot">
-          <img decoding="async" src="assets/app-screens/2.1.17/discovery.webp" width="720" height="1565" fetchpriority="high" alt="樱语发现页真实截图：何歳的读音、中文释义和例句，纸墨背景与四标签导航">
-          <figcaption>真实应用界面 · 2.1.17（199）· iOS 模拟器</figcaption>
+        <figure class="hero-experience" id="hero-experience">
+          <div class="demo-switch" role="group" aria-label="选择展示方式" hidden>
+            <button type="button" data-preview="demo" aria-pressed="true">上手试试</button>
+            <button type="button" data-preview="screenshot" aria-pressed="false">App 实拍</button>
+          </div>
+          <div class="demo-device">
+            <img class="demo-real-shot" decoding="async" src="assets/app-screens/2.1.17/discovery.webp" width="720" height="1565" fetchpriority="high" alt="樱语发现页真实截图：何歳的读音、中文释义和例句，纸墨背景与四标签导航">
+            <section class="demo-ui" aria-label="樱语卡片轻体验" hidden>
+              <div class="demo-statusbar" aria-hidden="true"><span>9:41</span><span class="demo-island"></span><svg width="34" height="12" viewBox="0 0 34 12" fill="currentColor"><path d="M0 8h2v4H0zm4-3h2v7H4zm4-3h2v10H8zm4-2h2v12h-2z"/><rect x="19" y="2" width="12" height="8" rx="2" fill="none" stroke="currentColor"/><rect x="21" y="4" width="8" height="4" rx="1"/><path d="M32 4h2v4h-2z"/></svg></div>
+              <div class="demo-screen"></div>
+              <nav class="demo-tabs" aria-label="体验内导航">
+                <button type="button" data-action="discover" aria-current="page"><span aria-hidden="true">葉</span>发现</button>
+                <a href="shadowing.html" aria-label="了解跟读功能，打开介绍页"><span aria-hidden="true">≋</span>跟读</a>
+                <button type="button" data-action="favorites"><span aria-hidden="true">♧</span>收藏</button>
+                <a href="progress.html" aria-label="了解我的页面，打开介绍页"><span aria-hidden="true">○</span>我的</a>
+              </nav>
+            </section>
+          </div>
+          <figcaption>
+            <span class="demo-instruction">真实应用界面 · 2.1.17（199）· iOS 模拟器</span>
+            <span class="demo-feedback" role="status" aria-live="polite" aria-atomic="true"></span>
+          </figcaption>
         </figure>
       </div>
     </section>

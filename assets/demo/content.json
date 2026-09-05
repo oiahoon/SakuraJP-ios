@@ -1,0 +1,47 @@
+[
+  {
+    "learningPoint": {
+      "id": "grammar_hanabira_n5_0050_verb-naide-kudasai",
+      "title": "动词 ないでください",
+      "reading": "ないでください",
+      "chinese_translation": "动词ない形加「でください」表示礼貌地请求对方不要做某事。"
+    },
+    "example": {
+      "id": 18959,
+      "japanese": "ここで写真を撮らないでください。",
+      "reading": "ここで しゃしんを とらないでください。",
+      "chinese": "请不要在这里拍照。",
+      "grammar_analysis": "「撮らない」是「撮る」的ない形；加「でください」表示请不要拍。"
+    }
+  },
+  {
+    "learningPoint": {
+      "id": "grammar_hanabira_n4_0096_temo-ii",
+      "title": "～てもいい",
+      "reading": "てもいい",
+      "chinese_translation": "「～てもいい」表示许可或询问许可，常译为“可以…… / ……也可以吗”。它接在动词て形后，不是表示“即使……也……”的让步。"
+    },
+    "example": {
+      "id": 22845,
+      "japanese": "ここで写真を撮ってもいいですか。",
+      "reading": "ここ で しゃしん を とっても いい です か。",
+      "chinese": "可以在这里拍照吗？",
+      "grammar_analysis": "「撮ってもいいですか」用动词て形加「もいいですか」询问是否被允许拍照。"
+    }
+  },
+  {
+    "learningPoint": {
+      "id": "grammar_hanabira_n4_0007_noun-noun-shika-nai",
+      "title": "名词しか～ない",
+      "reading": "しか ない",
+      "chinese_translation": "「しか～ない」表示“只有…… / 只好……”，后面必须接否定形式。它比「だけ」更强调选择少、范围窄。"
+    },
+    "example": {
+      "id": 19507,
+      "japanese": "私はりんごしか食べません。",
+      "reading": "わたし は りんご しか たべません。",
+      "chinese": "我只吃苹果。",
+      "grammar_analysis": "「りんごしか」把能吃的东西限制为苹果，后面用否定「食べません」。"
+    }
+  }
+]
